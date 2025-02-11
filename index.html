@@ -4,15 +4,46 @@
     <title>Home Page</title>
 
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
+    <link rel="stylesheet" type="text/css" href="homepageCSS.css">
     <style type="text/css">
         
     </style>
 </head>
 <body>
-    <div class="homepage">
-        <img id="logo" src="HomePageLogo.JPG" />
-    </div>
+    <svg id="LogoWrap">
+        <defs>
+            <!--    M = start point, A = x and y radius of curvature, 0 = arc rotation,
+                    0 = Large arc flag, 1 = sweep flag (curves up) -->
+            <path id="upperCurve" d="M 0,185 A 130,130 0 0,1 300,185"/>
+
+            <path id="lowerCurve" d="M 0,210 A 170,130 0 0,0 300,210"/>
+        </defs>
+    
+        <image id="Logo" href="HomePageLogo.JPG" />
+
+        <!-- Upper Text -->
+        <text font-size="26" fill="darkred" font-family="serif">
+            <textPath class="logoText" href="#upperCurve" startOffset="50%">
+                curation1
+            </textPath>
+        </text>
+    
+        <!-- Lower Text -->
+        <text font-size="26" fill="darkred" font-family="serif">
+            <textPath class="logoText" href="#lowerCurve" startOffset="50%">
+                for the percievers
+            </textPath>
+        </text>
+    </svg>
+
+    <ul id="homepageNav">
+        <li><a href="Shop.html">Shop</a></li>
+        <li><a href="AboutUs.html">About Us</a></li>
+        <li><a href="Contact.html">Contact</a></li>
+   </ul>
+    
+    
+    
    
 </body>
 </html>

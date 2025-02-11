@@ -2,6 +2,33 @@ body {
     margin: 0; 
     padding: 0; 
     display: flex; 
+    justify-content: center;
     align-items: center;
+    flex-direction: column;
     height: 100vh; 
+}
+
+image#Logo {
+    width: 300px; 
+    height: 300px;
+    x: 0;
+    y: 0;
+}
+
+path#upperCurve {
+    fill: transparent;
+}
+
+path#lowerCurve {
+    fill: transparent;
+}
+
+svg#LogoWrap {
+    width: 300px;
+    height: 350px;
+}
+
+.logoText {
+    text-anchor: middle;
+    font-size: 40px;
 }
