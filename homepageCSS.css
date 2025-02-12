@@ -2,10 +2,22 @@ body {
     margin: 0; 
     padding: 0; 
     display: flex; 
-    justify-content: center;
-    align-items: center;
     flex-direction: column;
-    height: 100vh; 
+    align-items: center;
+    height: 100vh;
+}
+
+.header {
+    width: 100%;
+    height: 50px;
+    background-color: #ffffff;
+    display: flex;
+    justify-content: left;
+    align-items: center;
+    box-sizing: border-box;
+    padding-left: 10px;
+    padding-right: 10px;
+    padding-top: 10px;
 }
 
 image#Logo {
@@ -26,6 +38,7 @@ path#lowerCurve {
 svg#LogoWrap {
     width: 300px;
     height: 300px;
+    margin-top: 80px;
 }
 
 .logoText {
@@ -59,4 +72,41 @@ ul#homepageNav li a {
 
 ul#homepageNav a:hover {
     color: rgb(0, 0, 0);
+}
+
+.hamburgerNav {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: left;
+    width: 40px;  /* Adjust the size as needed */
+    height: 100%; /* Adjust the size as needed */
+    background: transparent;
+    border: none;
+    cursor: pointer;
+    gap: 5px;
+}
+
+.line {
+    width: 100%;
+    height: 3px;
+    background: #980409;
+}
+
+.hamburgerNav:hover .line {
+    background: rgb(0, 0, 0);
+}
+
+#cartIMG {
+    width: 100%;
+}
+
+#cart {
+    width: 40px;
+    height: inherit;
+    margin-left: auto; 
+}
+
+#cartIMG:hover {
+    cursor: pointer;
 }
