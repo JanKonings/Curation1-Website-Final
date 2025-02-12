@@ -25,10 +25,38 @@ path#lowerCurve {
 
 svg#LogoWrap {
     width: 300px;
-    height: 350px;
+    height: 300px;
 }
 
 .logoText {
     text-anchor: middle;
+}
+
+text {
     font-size: 40px;
+    fill: #980409;
+}
+
+ul#homepageNav {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    list-style-type: none;
+    padding: 0;
+}
+
+ul#homepageNav li {
+    display: inline-block; 
+    margin: 20px;
+}
+
+ul#homepageNav li a {
+    text-decoration: none; 
+    color: #980409; 
+    font-size: 27px;
+}
+
+ul#homepageNav a:hover {
+    color: rgb(0, 0, 0);
 }
