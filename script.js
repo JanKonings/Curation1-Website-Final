@@ -1,5 +1,5 @@
 
 document.getElementById('hamburgerNav').addEventListener('click', function() {
-    alert('Hamburger clicked');
-    document.getElementById('nav').style.display = 'flex';
+    const nav = document.getElementById('nav');
+    nav.classList.toggle('active');
 });

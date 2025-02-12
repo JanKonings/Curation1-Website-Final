@@ -62,12 +62,35 @@ body {
 /* Nav Bar (hidden before burger click) */
 
 ul#nav {
-    display: none; 
-    align-items: center; 
+    position: absolute;
+    left: 50%;
+    top: 5px; 
+    transform: translateX(-200%) scale(0); 
+    display: flex; 
+    align-items: center;    
+    justify-content: center;
     list-style-type: none; 
     padding: 0; 
     margin: 0; 
     height: 50px; 
+    transition: transform 0.5s ease-out, opacity 0.5s ease-out; 
+}
+
+ul#nav.active {
+    transform: translateX(-50%) scale(1);
+    opacity: 1;
+
+}
+
+ul#nav img {
+    width: 40px; 
+    height: 40px; 
+}
+
+/* For Homepage li's */
+ul#nav li text {
+    color: #980409; 
+    font-size: 25px;
 }
 
 ul#nav li {
