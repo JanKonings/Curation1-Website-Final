@@ -1,0 +1,82 @@
+
+
+svg#letter {
+    width: 600px;
+    height: 400px;
+    margin-top: 70px;
+    box-sizing: border-box;
+    border: solid 5px #980409;
+    border-style: double;
+}
+
+.videoContainer img {
+    width: 40%;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    transition: transform 0.5s ease-in-out; 
+
+    /* mask-image: radial-gradient(circle, black 58%, transparent 42%); */
+}
+
+.videoContainer img:hover {
+    transform: translate(-50%, -50%) scale(1.1);
+    transition-duration: 0.5s;
+    cursor: pointer;
+}
+
+line {
+    stroke: #980409;
+    stroke-width: 2;
+}
+
+.videoContainer img:hover ~ .diagonalLine2 {
+    transform: rotate(-35deg);
+    transition-duration: 0.5s;
+    width: 44%;
+
+
+}
+.videoContainer img:hover ~ .diagonalLine1 {
+    transform: rotate(35deg);
+    transition-duration: 0.5s;
+    width: 44%;
+}
+
+
+.videoContainer {
+    position: relative;
+    height: 400px;
+    width: 600px;
+    margin-top: 70px;
+    border: solid 5px #980409;
+    border-style: double;
+}
+
+.diagonalLine1 {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 45.5%;
+    height: 2px;
+    z-index: 1;
+    transform: rotate(40deg);
+    transition: transform 0.5s, width 0.5s; 
+    transform-origin: 0% 0%;
+    background: #980409;
+}
+
+.diagonalLine2 {
+    position: absolute;
+    top: 0;
+    right: 0;
+    z-index: 1;
+    width: 45.5%;
+    height: 2px;
+    transform: rotate(-40deg);
+    transition: transform 0.5s, width 0.5s; 
+    transform-origin: top right;
+    background: #980409;
+}
+
