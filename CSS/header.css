@@ -19,6 +19,7 @@ body {
     padding-left: 10px;
     padding-right: 10px;
     padding-top: 10px;
+    box-sizing: border-box;
 }
 
 .hamburgerNav {
@@ -32,6 +33,7 @@ body {
     border: none;
     cursor: pointer;
     gap: 5px;
+    z-index: 2;
 }
 
 .line {
@@ -46,12 +48,17 @@ body {
 
 #cartIMG {
     width: 100%;
+    height: auto;
 }
 
 #cart {
     width: 40px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
     height: inherit;
     margin-left: auto; 
+    z-index: 2;
 }
 
 #cartIMG:hover {
@@ -64,28 +71,34 @@ body {
 
 ul#nav {
     position: absolute;
-    left: 50%;
-    top: 5px; 
-    transform: translateX(-100vw) scale(0); 
-    display: flex; 
-    align-items: center;    
+    top: 5px;
+    left: 50%;  /* Initially position the nav at the center horizontally */
+    transform: translateX(-50%);  /* Adjust to perfectly center it */
+    width: 800px;   
+    height: 50px;   /* Set a fixed height for the navbar */
+    background-color: white;  /* Optional: Change background color */
+    display: flex;
+    align-items: center;
     justify-content: center;
-    list-style-type: none; 
-    padding: 0; 
-    margin: 0; 
-    height: 50px; 
-    transition: transform 0.5s ease-out, opacity 0.5s ease-out; 
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+    transition: left 0.5s ease-out, opacity 0.5s ease-out; /* Smooth transition */
+    opacity: 0;  /* Initially hidden */
+    box-sizing: border-box;
 }
 
 ul#nav.active {
-    transform: translateX(-50%) scale(1);
+    /* display: inline-block; 
+    margin: 40px; */
+    left: 50%;
     opacity: 1;
-
+    transform: translateX(-50%);  /* Keep it centered */
 }
 
 ul#nav img {
     width: 40px; 
-    height: 40px; 
+    height: auto; 
 }
 
 /* For Homepage li's */
@@ -108,3 +121,51 @@ ul#nav li a {
 ul#nav a:hover {
     font-weight: bold;
 }
+
+@media (max-width: 800px) {
+    ul#nav li {
+        margin: 25px;
+    }
+}
+
+@media (max-width: 650px) {
+    ul#nav li text {
+        font-size: 20px;
+    }
+
+    ul#nav li a {
+        font-size: 20px;
+    }
+
+    ul#nav li {
+        margin: 15px;
+    }
+}
+
+@media (max-width: 500px) {
+    ul#nav li text {
+        font-size: 15px;
+    }
+
+    ul#nav li a {
+        font-size: 15px;
+    }
+
+    ul#nav li {
+        margin: 10px;
+    }
+
+    ul#nav img {
+        width: 30px;
+        height: auto; 
+    }
+
+    .hamburgerNav {
+        width: 35px;
+    }
+
+    #cart {
+        width: 30px;
+    }
+}
+
