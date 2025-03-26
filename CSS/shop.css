@@ -70,6 +70,35 @@
     gap: 10px;
 }
 
+.quantityOptions {
+    display: flex;
+    gap: 10px;
+}
 
+.quantityOptions button {
+    width: 40px;
+    height: 40px;
+    background-color: white;
+    color: #980409;
+    border: 1px solid #980409;
+    border-radius: 50%;
+}
 
+.quantityOptions button:hover {
+    background-color: #980409;
+    color: white;
+}
+
+.quantityInput {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 40px;
+    height: 40px;
+    background-color: white;
+    color: #980409;
+    border: 1px solid #980409;
+    text-align: center;
+    border-radius: 50%;
+}
 

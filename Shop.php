@@ -16,6 +16,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" type="text/css" href="CSS/shop.css">
     <link rel="stylesheet" type="text/css" href="CSS/header.css">
+    <script src="https://code.jquery.com/jquery-3.7.1.js" integrity="sha256-eKhayi8LEQwp4NKxN+CfCh+3qOVUtJn3QNZ0TciWLP4=" crossorigin="anonymous"></script>
     <script src="Javascript/script.js" defer></script>
 </head>
 <body>
@@ -42,7 +43,6 @@
 
     <div id="shopContainer">
         <div class="shopItem">
-            <!-- Your product display here -->
         </div>
         
         <form id="shopForm">
@@ -56,20 +56,42 @@
                 <input type="radio" name="size" id="34" class="customRadio" value="34">
                 <label for="34">34</label>
             </div>
+            <div class="quantityOptions">
+                <button type="button" id="decrement">-</button>
+                <div class="quantityInput">
+                    1
+                </div>
+                <button type="button" id="increment">+</button>
+            </div>
             <button type="button" id="addToCart">Add to Cart</button>
         </form>
 
         <script>
+            $(document).ready(function() {
+                $("#decrement").click(function() {
+                    const quantityInput = $(".quantityInput");
+                    const quantity = parseInt(quantityInput.text());
+                    if (quantity > 1) {
+                        quantityInput.text(quantity - 1);
+                    }
+                });
+
+                $("#increment").click(function() {
+                    const quantityInput = $(".quantityInput");
+                    const quantity = parseInt(quantityInput.text());
+                    quantityInput.text(quantity + 1);
+                });
+            });
+
             document.getElementById("addToCart").addEventListener("click", function() {
-                // Get the selected size
                 const selectedSize = document.querySelector('input[name="size"]:checked');
+                const quantity = parseInt(document.querySelector(".quantityInput").textContent);
                 
                 if (!selectedSize) {
                     alert("Please select a size.");
                     return;
                 }
 
-                // Map the selected size to the corresponding variant ID
                 const variantMapping = {
                     "30": "48240682303721",
                     "32": "48240682336489",
@@ -84,8 +106,7 @@
                     return;
                 }
 
-                // Redirect to Shopify checkout with the item
-                window.location.href = `https://y8hkdv-yg.myshopify.com/cart/${variantId}:1`;
+                window.location.href = `https://y8hkdv-yg.myshopify.com/cart/${variantId}:${quantity}`;
             });
         </script>
     </div>
