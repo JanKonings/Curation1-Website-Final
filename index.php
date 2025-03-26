@@ -1,6 +1,11 @@
 <?php
     session_start();
 
+    if (isset($_SESSION['loggedin']) && $_SESSION['loggedin'] === true) {
+        header("Location: homepage.php");
+        exit;
+    }
+
     // Set the correct password
     $correct_password = "stinkybuttnoah"; // Replace this with your actual password
 
