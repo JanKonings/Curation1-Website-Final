@@ -34,6 +34,7 @@ body {
     cursor: pointer;
     gap: 5px;
     z-index: 2;
+    background-color: white;
 }
 
 .line {
