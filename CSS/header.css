@@ -143,10 +143,6 @@ ul#nav a:hover {
 }
 
 @media (max-width: 500px) {
-    ul#nav li text {
-        font-size: 15px;
-    }
-
     ul#nav li a {
         font-size: 15px;
     }
