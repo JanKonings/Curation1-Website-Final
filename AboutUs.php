@@ -1,3 +1,14 @@
+<?php
+    session_start();
+
+    // Check if the user is logged in
+    if (!isset($_SESSION['loggedin']) || $_SESSION['loggedin'] !== true) {
+        // If not logged in, redirect to the login page
+        header("Location: index.php");
+        exit;
+    }
+?>
+
 <!DOCTYPE html>
 <html>
 <head>
@@ -18,11 +29,11 @@
         </button>
 
         <ul id="nav">
-            <li><a href="index.html">
+            <li><a href="homepage.php">
                 <img id="home" src="Images/HomePageLogo.JPG" />
             </a></li>
-            <li><a href="Shop.html">Shop</a></li>
-            <li><a href="AboutUs.html">About Us</a></li>
+            <li><a href="Shop.php">Shop</a></li>
+            <li><a href="AboutUs.php">About Us</a></li>
             <li><a href="Contact.html">Contact</a></li>
         </ul>
 

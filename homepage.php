@@ -1,13 +1,22 @@
+<?php
+    session_start();
+
+    // Check if the user is logged in
+    if (!isset($_SESSION['loggedin']) || $_SESSION['loggedin'] !== true) {
+        // If not logged in, redirect to the login page
+        header("Location: index.php");
+        exit;
+    }
+?>
+
 <!DOCTYPE html>
 <html>
 <head>
     <title>Home Page</title>
-
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" type="text/css" href="CSS/homepageCSS.css">
     <link rel="stylesheet" type="text/css" href="CSS/header.css">
     <script src="Javascript/script.js" defer></script>
-
 </head>
 <body>
     <div class="header">
@@ -24,29 +33,22 @@
         <a id="cart" href="cart.html">
             <img id="cartIMG" src="Images/cart.png" />
         </a>
-
-        
     </div>
 
     <svg id="LogoWrap">
         <defs>
-            <!--    M = start point, A = x and y radius of curvature, 0 = arc rotation,
-                    0 = Large arc flag, 1 = sweep flag (curves up) -->
             <path id="upperCurve" d="M 0,185 A 130,130 0 0,1 300,185"/>
-
             <path id="lowerCurve" d="M 0,210 A 170,130 0 0,0 300,210"/>
         </defs>
     
         <image id="Logo" href="Images/HomePageLogo.JPG" />
 
-        <!-- Upper Text -->
         <text>
             <textPath class="logoText" href="#upperCurve" startOffset="50%">
                 curation1
             </textPath>
         </text>
     
-        <!-- Lower Text -->
         <text>
             <textPath class="logoText" href="#lowerCurve" startOffset="50%">
                 for the perceivers
@@ -55,15 +57,9 @@
     </svg>
 
     <ul id="homepageNav">
-        <li><a href="Shop.html">Shop</a></li>
-        <li><a href="AboutUs.html">About Us</a></li>
+        <li><a href="Shop.php">Shop</a></li>
+        <li><a href="AboutUs.php">About Us</a></li>
         <li><a href="Contact.html">Contact</a></li>
     </ul>
-
-    
-    
-    
-   
 </body>
 </html>
-
