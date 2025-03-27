@@ -51,6 +51,7 @@
         <img src="Images/HomePageLogo.JPG" id="Logo"/>
         <form action="index.php" method="POST">
             <input type="password" id="password" name="password" placeholder="Enter Password" required>
+            <!-- <button type="submit">Login</button> -->
             <?php if (!empty($error_message)) : ?>
                 <p style="color: #980409; margin-top: 5px;"><?php echo $error_message; ?></p>
             <?php endif; ?>

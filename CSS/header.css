@@ -6,9 +6,12 @@ body {
     flex-direction: column;
     align-items: center;
     height: 100vh;
+    max-width: 100vw;
+    overflow-x: hidden;
 }
 
 .header {
+    position: fixed;
     width: 100%;
     height: 50px;
     background-color: #ffffff;
@@ -16,7 +19,6 @@ body {
     justify-content: left;
     align-items: center;
     box-sizing: border-box;
-    padding-left: 10px;
     padding-right: 10px;
     padding-top: 10px;
     box-sizing: border-box;
@@ -28,7 +30,9 @@ body {
     justify-content: center;
     align-items: left;
     width: 40px;  
-    height: 100%; 
+    height: 100%;
+    padding-left: 15px;
+    padding-right: 0px;
     background: transparent;
     border: none;
     cursor: pointer;
@@ -66,12 +70,10 @@ body {
     cursor: pointer;
 }
 
-
-
 /* Nav Bar (hidden before burger click) */
 
 ul#nav {
-    position: absolute;
+    position: fixed;
     top: 5px;
     left: 50%;  /* Initially position the nav at the center horizontally */
     transform: translateX(-50%);  /* Adjust to perfectly center it */
