@@ -29,7 +29,7 @@
                 exit;
             } else {
                 // Set error message if the password is incorrect
-                $error_message = "Incorrect password. Please try again.";
+                $error_message = "incorrect";
             }
         }
     }
@@ -41,7 +41,7 @@
 <html>
 <head>
     <title>Shop Page</title>
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
     <link rel="stylesheet" type="text/css" href="CSS/password.css">
     <script src="https://code.jquery.com/jquery-3.7.1.js" integrity="sha256-eKhayi8LEQwp4NKxN+CfCh+3qOVUtJn3QNZ0TciWLP4=" crossorigin="anonymous"></script>
     <script src="Javascript/script.js" defer></script>
@@ -50,12 +50,31 @@
     <div class="screen">
         <img src="Images/HomePageLogo.JPG" id="Logo"/>
         <form action="index.php" method="POST">
-            <input type="password" id="password" name="password" placeholder="Enter Password" required>
+            <input type="password" id="password" name="password" required autofocus>
             <!-- <button type="submit">Login</button> -->
             <?php if (!empty($error_message)) : ?>
-                <p style="color: #980409; margin-top: 5px;"><?php echo $error_message; ?></p>
+                <p class="error"><?php echo $error_message; ?></p>
             <?php endif; ?>
         </form>
     </div>
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const passwordInput = document.getElementById('password');
+            passwordInput.focus();
+
+            document.addEventListener('click', function() {
+                passwordInput.focus();
+                const errorElement = document.querySelector('.error');
+                if (errorElement) {
+                    errorElement.textContent = '';
+                }
+            });
+                        
+            // Adjust input width as user types
+            passwordInput.addEventListener('input', function() {
+                this.style.width = Math.max(this.value.length, 1) + "ch";
+            });
+        });
+    </script>
 </body>
 </html>

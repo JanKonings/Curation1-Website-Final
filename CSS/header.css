@@ -86,16 +86,12 @@ ul#nav {
     list-style-type: none;
     padding: 0;
     margin: 0;
-    transition: left 0.5s ease-out, opacity 0.5s ease-out; /* Smooth transition */
-    opacity: 0;  /* Initially hidden */
+    transition: left 0.5s ease-out; /* Smooth transition */
     box-sizing: border-box;
 }
 
 ul#nav.active {
-    /* display: inline-block; 
-    margin: 40px; */
     left: 50%;
-    opacity: 1;
     transform: translateX(-50%);  /* Keep it centered */
 }
 
