@@ -29,26 +29,28 @@
         </a>
     </div>
 
-    <svg id="LogoWrap">
-        <defs>
-            <path id="upperCurve" d="M 0,185 A 130,130 0 0,1 300,185"/>
-            <path id="lowerCurve" d="M 0,210 A 170,130 0 0,0 300,210"/>
-        </defs>
-    
-        <image id="Logo" href="Images/HomePageLogo.JPG" />
+    <div class="imgHolder">
+        <svg id="LogoWrap">
+            <defs>
+                <path id="upperCurve" d="M 0,185 A 130,130 0 0,1 300,185"/>
+                <path id="lowerCurve" d="M 0,210 A 170,130 0 0,0 300,210"/>
+            </defs>
+        
+            <image id="Logo" href="Images/HomePageLogo.JPG" />
 
-        <text>
-            <textPath class="logoText" href="#upperCurve" startOffset="50%">
-                curation1
-            </textPath>
-        </text>
-    
-        <text>
-            <textPath class="logoText" href="#lowerCurve" startOffset="50%">
-                for the perceivers
-            </textPath>
-        </text>
-    </svg>
+            <text>
+                <textPath class="logoText" href="#upperCurve" startOffset="50%">
+                    curation1
+                </textPath>
+            </text>
+        
+            <text>
+                <textPath class="logoText" href="#lowerCurve" startOffset="50%">
+                    for the perceivers
+                </textPath>
+            </text>
+        </svg>
+    </div>
 
     <ul id="homepageNav">
         <li><a href="Shop.php">Shop</a></li>

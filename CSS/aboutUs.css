@@ -1,4 +1,9 @@
-
+.aboutContainer {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding-top: 50px;
+}
 
 svg#letter {
     width: 600px;
@@ -46,6 +51,9 @@ line {
 
 
 .videoContainer {
+    display: flex;
+    justify-content: center;
+    align-items: center;
     position: relative;
     height: 400px;
     width: 600px;

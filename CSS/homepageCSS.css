@@ -5,6 +5,12 @@ image#Logo {
     y: 0;
 }
 
+.imgHolder {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
 path#upperCurve {
     fill: transparent;
 }

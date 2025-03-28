@@ -13,6 +13,7 @@ $(document).ready(function() {
                 nav.removeClass('active'); // Remove active class after the slide-out
                 nav.hide(); // Ensure it is hidden after sliding out
             });
+            $(this).css('font-weight', 'normal');
         } else {
             // If it’s not active, slide it in
             nav.stop(true, true).show().animate({

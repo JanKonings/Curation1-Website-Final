@@ -50,7 +50,8 @@
     <div class="screen">
         <img src="Images/HomePageLogo.JPG" id="Logo"/>
         <form action="index.php" method="POST">
-            <input type="password" id="password" name="password" required autofocus>
+            <img src="Images/cursor.png" id="cursor"/>
+            <input type="password" id="password" name="password" required>
             <!-- <button type="submit">Login</button> -->
             <?php if (!empty($error_message)) : ?>
                 <p class="error"><?php echo $error_message; ?></p>
@@ -60,7 +61,6 @@
     <script>
         document.addEventListener('DOMContentLoaded', function() {
             const passwordInput = document.getElementById('password');
-            passwordInput.focus();
 
             document.addEventListener('click', function() {
                 passwordInput.focus();
@@ -73,7 +73,28 @@
             // Adjust input width as user types
             passwordInput.addEventListener('input', function() {
                 this.style.width = Math.max(this.value.length, 1) + "ch";
+                const errorElement = document.querySelector('.error');
+                if (errorElement) {
+                    errorElement.textContent = '';
+                }
             });
+
+            const cursorImg = document.getElementById('cursor');
+            const cursorBlink = setInterval(function() {
+                if (!passwordInput.matches(':focus') && passwordInput.value === '') {
+                    cursorImg.style.visibility = cursorImg.style.visibility === 'hidden' ? 'visible' : 'hidden';
+                }
+            }, 500);
+
+            passwordInput.addEventListener('focus', function() {
+                cursorImg.style.visibility = 'hidden'; // Use visibility instead of display
+
+            });
+
+            if (!/Mobi|Android|iPad|Tablet|Touch/i.test(navigator.userAgent)) {
+                passwordInput.focus();
+            }
+            
         });
     </script>
 </body>

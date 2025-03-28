@@ -1,15 +1,3 @@
-body {
-    position: relative;
-    margin: 0; 
-    padding: 0; 
-    display: flex; 
-    flex-direction: column;
-    align-items: center;
-    height: 100vh;
-    max-width: 100vw;
-    overflow-x: hidden;
-}
-
 .header {
     position: fixed;
     width: 100%;
@@ -18,10 +6,11 @@ body {
     display: flex;
     justify-content: left;
     align-items: center;
-    box-sizing: border-box;
     padding-right: 10px;
     padding-top: 10px;
     box-sizing: border-box;
+    top: 0;
+    left: 0;
 }
 
 .hamburgerNav {
@@ -40,6 +29,7 @@ body {
     z-index: 2;
     background-color: white;
 }
+
 
 .line {
     width: 100%;
@@ -74,7 +64,7 @@ body {
 
 ul#nav {
     position: fixed;
-    top: 5px;
+    top: 7px;
     left: 50%;  /* Initially position the nav at the center horizontally */
     transform: translateX(-50%);  /* Adjust to perfectly center it */
     width: 800px;   
@@ -117,8 +107,8 @@ ul#nav li a {
     font-size: 25px;
 }
 
-ul#nav a:hover {
-    font-weight: bold;
+ul#nav li a:hover {
+    text-shadow: 2px 0px 0px #980409; /* Simulate bold effect */
 }
 
 @media (max-width: 800px) {

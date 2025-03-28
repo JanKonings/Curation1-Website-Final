@@ -10,6 +10,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
     <link rel="stylesheet" type="text/css" href="CSS/aboutUs.css">
     <link rel="stylesheet" type="text/css" href="CSS/header.css">
+    <script src="https://code.jquery.com/jquery-3.7.1.js" integrity="sha256-eKhayi8LEQwp4NKxN+CfCh+3qOVUtJn3QNZ0TciWLP4=" crossorigin="anonymous"></script>
     <script src="Javascript/script.js" defer></script>
 
 </head>
@@ -44,11 +45,13 @@
 
 
     </svg> -->
-    <div class="videoContainer">
-        <!-- Diagonal Lines -->
-        <img id="videoLink" src="Images/HomePageLogo.JPG" />
-         <div class="diagonalLine1"></div>
-         <div class="diagonalLine2"></div>
+    <div class="aboutContainer">
+        <div class="videoContainer">
+            <!-- Diagonal Lines -->
+            <img id="videoLink" src="Images/HomePageLogo.JPG" />
+            <div class="diagonalLine1"></div>
+            <div class="diagonalLine2"></div>
+        </div>
     </div>
 
 
