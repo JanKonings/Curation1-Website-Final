@@ -38,7 +38,7 @@
         <div class="checkout">
         </div>
         <button type="button" id="clearCart">Clear Cart</button>
-        <button type="button" id="checkout">Ceckout</button>
+        <button type="button" id="checkout">Checkout</button>
     </div>
     
 
@@ -101,13 +101,7 @@
                     cartItemElement.remove();
 
                     // Update the total price
-                    updateTotalPrice();
-                    
-                    // If cart is empty, show the "empty" message
-                    if (cartItems.length === 0) {
-                        shopItemsContainer.innerHTML = `<h1 id="product">Your cart is empty.</h1>`;
-                        checkoutContainer.innerHTML = `<h1 id="total">Total Price: $0</h1>`;
-                    }
+                    updateCart();
                 });
             });
 
@@ -121,17 +115,26 @@
                 checkoutContainer.innerHTML = `<h1 id="total">Total Price: $0</h1>`;
             });
 
-            // Function to update the total price
-            function updateTotalPrice() {
+            function updateCart() {
+                // Recalculate the total number of items and the price
                 let totalItems = cartItems.reduce((count, item) => {
                     return count + item.quantity;
                 }, 0);
 
                 var totalPrice = totalItems * 220;
+
+                // Update the total price and display the cart
                 checkoutContainer.innerHTML = `<h1 id="total">Total Price: $${totalPrice}</h1>`;
+
+                // If the cart is empty, show the "empty" message
+                if (cartItems.length === 0) {
+                    shopItemsContainer.innerHTML = `<h1 id="product">Your cart is empty.</h1>`;
+                }
             }
 
             document.getElementById('checkout').addEventListener('click', function() {
+                const cartItems = JSON.parse(localStorage.getItem('cartItems')) || [];
+
                 // Create the Shopify cart URL
                 let cartURL = 'https://y8hkdv-yg.myshopify.com/cart/';
 
