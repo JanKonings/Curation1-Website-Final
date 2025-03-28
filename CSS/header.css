@@ -108,7 +108,7 @@ ul#nav li a {
 }
 
 ul#nav li a:hover {
-    text-shadow: 2px 0px 0px #980409; /* Simulate bold effect */
+    font-weight: bold;
 }
 
 @media (max-width: 800px) {

@@ -31,7 +31,7 @@
             <li><a href="Contact.html">Contact</a></li>
         </ul>
 
-        <a id="cart" href="cart.html">
+        <a id="cart" href="cart.php">
             <img id="cartIMG" src="Images/cart.png" />
         </a>
     </div>

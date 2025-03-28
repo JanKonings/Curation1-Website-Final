@@ -29,7 +29,7 @@
             <li><a href="Contact.html">Contact</a></li>
         </ul>
 
-        <a id="cart" href="cart.html">
+        <a id="cart" href="cart.php">
             <img id="cartIMG" src="Images/cart.png" />
         </a>
     </div>
@@ -99,7 +99,18 @@
                     return;
                 }
 
-                window.location.href = `https://y8hkdv-yg.myshopify.com/cart/${variantId}:${quantity}`;
+                const cartData = {
+                    variantId: variantId,
+                    quantity: quantity,
+                    size: selectedSize.value
+                };
+
+                // Save cart data in localStorage
+                let cartItems = JSON.parse(localStorage.getItem('cartItems')) || [];
+                cartItems.push(cartData);
+                localStorage.setItem('cartItems', JSON.stringify(cartItems));
+
+                // window.location.href = `https://y8hkdv-yg.myshopify.com/cart/${variantId}:${quantity}`;
             });
         </script>
     </div>

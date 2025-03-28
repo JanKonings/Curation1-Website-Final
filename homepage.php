@@ -24,7 +24,7 @@
             <li><text>Pre - Order Coming soon!</text></li>
         </ul>
 
-        <a id="cart" href="cart.html">
+        <a id="cart" href="cart.php">
             <img id="cartIMG" src="Images/cart.png" />
         </a>
     </div>
