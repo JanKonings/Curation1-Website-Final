@@ -38,6 +38,7 @@
         <div class="checkout">
         </div>
         <button type="button" id="clearCart">Clear Cart</button>
+        <button type="button" id="checkout">Ceckout</button>
     </div>
     
 
@@ -129,6 +130,18 @@
                 var totalPrice = totalItems * 220;
                 checkoutContainer.innerHTML = `<h1 id="total">Total Price: $${totalPrice}</h1>`;
             }
+
+            document.getElementById('checkout').addEventListener('click', function() {
+                // Create the Shopify cart URL
+                let cartURL = 'https://y8hkdv-yg.myshopify.com/cart/';
+
+                // Loop through each item and add the variantId and quantity to the URL
+                let cartItemsString = cartItems.map(item => `${item.variantId}:${item.quantity}`).join(',');
+                cartURL += cartItemsString;
+
+                // Redirect to the Shopify cart
+                window.location.href = cartURL;
+            });
         };
     </script>
 

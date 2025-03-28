@@ -18,6 +18,23 @@
     border-width: 1px;
 }
 
+@media (max-width: 600px) {
+    .shopItem {
+        margin-top: 70px;
+        width: 250px;
+        height: 350px;
+    }
+}
+
+@media (max-width: 600px) {
+    .shopItem {
+        margin-top: 70px;
+        width: 200px;
+        height: 280px;
+    }
+}
+
+
 .sizeOptions {
     display: flex;
     gap: 10px;

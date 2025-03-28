@@ -109,8 +109,6 @@
                 let cartItems = JSON.parse(localStorage.getItem('cartItems')) || [];
                 cartItems.push(cartData);
                 localStorage.setItem('cartItems', JSON.stringify(cartItems));
-
-                // window.location.href = `https://y8hkdv-yg.myshopify.com/cart/${variantId}:${quantity}`;
             });
         </script>
     </div>
