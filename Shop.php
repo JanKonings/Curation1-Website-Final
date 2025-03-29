@@ -24,7 +24,7 @@
             <li><a href="homepage.php">
                 <img id="home" src="Images/HomePageLogo.JPG" />
             </a></li>
-            <li><a href="Shop.php">Shop</a></li>
+            <li><a href="preShop.php">Shop</a></li>
             <li><a href="AboutUs.php">About Us</a></li>
             <li><a href="Contact.html">Contact</a></li>
         </ul>
@@ -36,6 +36,7 @@
 
     <div id="shopContainer">
         <div class="shopItem">
+            <img id="shopImg" src="Images/indigo1.png">
         </div>
         
         <form id="shopForm">

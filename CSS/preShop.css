@@ -1,0 +1,26 @@
+#countdown {
+    width: 100%;
+    margin-top: 50px;
+    display: flex;
+    min-height: 100vh;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    box-sizing: border-box;
+    background-color: #f7f7f7;
+}
+
+#countdownTimer {
+    font-size: 50px;
+    color: #980409;
+}
+
+.eggDrop {
+    display: flex;
+    box-sizing: border-box;
+}
+
+#animation {
+    width: 500px;
+    height: auto;
+}

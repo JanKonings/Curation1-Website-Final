@@ -24,7 +24,7 @@
             <li><a href="homepage.php">
                 <img id="home" src="Images/HomePageLogo.JPG" />
             </a></li>
-            <li><a href="Shop.php">Shop</a></li>
+            <li><a href="preShop.php">Shop</a></li>
             <li><a href="AboutUs.php">About Us</a></li>
             <li><a href="Contact.html">Contact</a></li>
         </ul>
