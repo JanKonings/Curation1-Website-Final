@@ -34,70 +34,93 @@
         </a>
     </div>
 
+    <audio id="crackSizzle">
+        <source src="Images/eggDrop/sizzleFade.mp3" type="audio/mpeg">
+    </audio>    
+
+    <audio id="crack">
+        <source src="Images/eggDrop/crack.mp3" type="audio/mpeg">
+    </audio> 
+
     <div id="countdown">
         <div class="eggDrop">
-            <img id="animation" src="Images/eggDrop/Untitled_Artwork-17.jpeg">
+            <div id="eggClick"></div>
+            <img id="animation" src="Images/eggDrop/Untitled_Artwork-1-Picsart-BackgroundRemover.jpeg">
+            <div id="timer">
+                <span id="countdownTimer" class="time"></span>
+            </div>
+
         </div>  
 
-        <div id="timer">
-        <span id="countdownTimer" class="time"></span>
-        </div>
+        
     </div>
 
     <script>
-        window.onload = function() {
-            const animationImg = document.getElementById('animation');
-            let frameIndex = 1;
-
-            // Array of image filenames (Untitled_Artwork-17.jpeg to Untitled_Artwork-44.jpeg)
-            const totalFrames = 21;
+        window.onload = function () {
+            let clickCount = 0; // Track number of clicks
+            const animationImg = document.getElementById("animation");
             const imagePaths = [];
+            const totalFrames = 14;
+            
             for (let i = 1; i <= totalFrames; i++) {
-                imagePaths.push(`Images/eggDrop/Untitled_Artwork-${i}.jpeg`);  // Assuming images are in the Images folder
+                imagePaths.push(`Images/eggDrop/Untitled_Artwork-${i}-Picsart-BackgroundRemover.jpeg`);
             }
 
-            // Function to update the src attribute of the img element to the next frame
-            function updateImageSource() {
-                animationImg.src = imagePaths[frameIndex - 1];
-                
-                // Move to the next frame
-                frameIndex++;
-                if (frameIndex > imagePaths.length) {
-                    clearInterval(animationInterval); // Stop the animation when the last frame is reached
+            document.getElementById("eggClick").addEventListener("click", function () {
+                clickCount++;
+
+                // First click: Change the image once
+                if (clickCount === 1) {
+                    animationImg.src = imagePaths[1]; // Show first frame
+                    var audio = document.getElementById("crack");
+                    audio.play();
+                    return; // Stop further execution
                 }
-            }
 
-            // Start changing the image source every 100 milliseconds (adjust speed as needed)
-            const frameRate = 80;  
-            let animationInterval = setInterval(updateImageSource, frameRate);
+                // Second click: Start the animation and play audio
+                if (clickCount === 2) {
+                    animationImg.dataset.clicked = "true"; // Prevent further clicks
+                    var audio = document.getElementById("crackSizzle");
+                    audio.play();
 
+                    let frameIndex = 1;
 
+                    function updateImageSource() {
+                        animationImg.src = imagePaths[frameIndex]; // Update image
+                        frameIndex++;
 
+                        if (frameIndex >= imagePaths.length) {
+                            clearInterval(animationInterval); // Stop slideshow
 
+                            // Start countdown
+                            const targetDate = new Date().getTime() + 5000;
+                            const countdownFunction = setInterval(function () {
+                                const now = new Date().getTime();
+                                const remainingTime = targetDate - now;
 
-            const targetDate = new Date().getTime() + 5000; // 10 seconds from now
-        
+                                const hours = Math.floor((remainingTime % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+                                const minutes = Math.floor((remainingTime % (1000 * 60 * 60)) / (1000 * 60));
+                                const seconds = Math.floor((remainingTime % (1000 * 60)) / 1000);
 
-            const countdownFunction = setInterval(function() {
-                const now = new Date().getTime();
-                const remainingTime = targetDate - now;
+                                document.getElementById("countdownTimer").innerText = 
+                                    `${String(hours).padStart(2, '0')}:${String(minutes).padStart(2, '0')}:${String(seconds).padStart(2, '0')}`;
 
-                const hours = Math.floor((remainingTime % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60)); // hours
-                const minutes = Math.floor((remainingTime % (1000 * 60 * 60)) / (1000 * 60)); // minutes
-                const seconds = Math.floor((remainingTime % (1000 * 60)) / 1000); // seconds
+                                if (remainingTime < 0) {
+                                    clearInterval(countdownFunction);
+                                    document.getElementById("countdownTimer").innerText = "00:00:00";
+                                    window.location.href = "Shop.php";
+                                }
+                            }, 200);
+                        }
+                    }
 
-                const formattedHours = String(hours).padStart(2, '0');
-                const formattedMinutes = String(minutes).padStart(2, '0');
-                const formattedSeconds = String(seconds).padStart(2, '0');
-
-                document.getElementById("countdownTimer").innerText = `${formattedHours}:${formattedMinutes}:${formattedSeconds}`;
-
-                if (remainingTime < 0) {
-                    clearInterval(countdownFunction);
-                    window.location.href = "Shop.php";
+                    // Start animation
+                    const frameRate = 80;
+                    let animationInterval = setInterval(updateImageSource, frameRate);
                 }
-            }, 1); // Update every millisecond
+            });
         };
+
     </script>
 </body>
 </html>

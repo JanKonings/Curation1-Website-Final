@@ -1,26 +1,51 @@
 #countdown {
     width: 100%;
-    margin-top: 50px;
+    /* margin-top: 50px; */
     display: flex;
     min-height: 100vh;
-    justify-content: center;
+    /* justify-content: center; */
     align-items: center;
     flex-direction: column;
     box-sizing: border-box;
-    background-color: #f7f7f7;
+    background-color: #ffffff;
 }
 
 #countdownTimer {
-    font-size: 50px;
-    color: #980409;
+    font-size: 28px;
+    color: #f7f3e8;
 }
 
 .eggDrop {
     display: flex;
     box-sizing: border-box;
+    position: relative;
 }
 
 #animation {
     width: 500px;
     height: auto;
 }
+
+#timer {
+    position: absolute;
+    bottom: 190px; /* Adjust this value to move the timer up or down */
+    left: 50%;
+    transform: translateX(-50%); /* Center it horizontally */
+    background: rgba(255, 255, 255, 0); /* Optional: add a semi-transparent background for better visibility */
+    margin-left: 16px;
+    border-radius: 5px;
+    background-color: #f7f7f700;
+}
+
+#eggClick {
+    position: absolute;
+    top: 150px;
+    left: 50%;
+    transform: translateX(-50%); /* Center it horizontally */
+    background: rgba(255, 255, 255, 0); /* Optional: add a semi-transparent background for better visibility */
+    border-radius: 5px;
+    background-color: #ff000000;
+    width: 260px;
+    height: 210px;
+}
+
