@@ -45,14 +45,31 @@
 
 
     </svg> -->
-    <div class="aboutContainer">
+    <!-- <div class="aboutContainer">
         <div class="videoContainer">
-            <!-- Diagonal Lines -->
             <img id="videoLink" src="Images/HomePageLogo.JPG" />
             <div class="diagonalLine1"></div>
             <div class="diagonalLine2"></div>
         </div>
+    </div> -->
+    <div class="letterContainer">
+        <div class="letter">
+            <img src="Images/envelopeClosed.png" id="letterImg">
+        </div>
     </div>
+
+    <script>
+        $(document).ready(function() {
+            $('#letterImg').hover(
+                function() {
+                    $(this).attr('src', 'Images/envelopeOpen.png');
+                },
+                function() {
+                    $(this).attr('src', 'Images/envelopeClosed.png');
+                }
+            );
+        });
+    </script>
 
 
 

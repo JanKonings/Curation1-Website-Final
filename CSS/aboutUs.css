@@ -1,4 +1,4 @@
-.aboutContainer {
+/* .aboutContainer {
     display: flex;
     justify-content: center;
     align-items: center;
@@ -21,8 +21,6 @@ svg#letter {
     left: 50%;
     transform: translate(-50%, -50%);
     transition: transform 0.5s ease-in-out; 
-
-    /* mask-image: radial-gradient(circle, black 58%, transparent 42%); */
 }
 
 .videoContainer img:hover {
@@ -87,4 +85,23 @@ line {
     transform-origin: top right;
     background: #980409;
 }
+ */
 
+
+ .letterContainer {
+    width: 100%;
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.letter {
+    display: flex;
+    position: relative;
+}
+
+#letterImg {
+    width: 600px;
+    height: auto;
+}

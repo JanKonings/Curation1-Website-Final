@@ -1,0 +1,139 @@
+.earlyAccess {
+    width: 100%;
+    height: 100vh;
+    background-color: rgba(58, 52, 52, 0.468);
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 10;
+    display: none;
+    justify-content: center;
+    align-items: center;
+}
+
+.earlyAccessForm {
+    width: 600px;
+    height: 400px;
+    display: flex;
+    flex-direction: row;
+}
+
+#signupForm {
+    flex: 1;
+    background-color: rgb(255, 255, 255);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    position: relative;
+}
+
+#sideImgBox {
+    flex: 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: rgb(255, 255, 255);
+}
+
+label[for="phone"] {
+    color: rgb(0, 0, 0);
+    margin-top: 20px;
+}
+
+#sideImg {
+    width: 100%;
+    height: auto;
+}
+
+#earlyAccessButton {
+    margin-top: 30px;
+    width: 80%;
+    background-color: #c36d70;
+    /* border: #980409 2px dotted; */
+    border: none;
+    padding: 12px;
+    color: #ffffff;
+    border-radius: 30px;
+}
+
+#earlyAccessButton:hover {
+    background-color: #980409;
+}
+
+input[type="email"],
+input[type="tel"] {
+    outline: none;
+    border: none;
+    border-bottom: 1px solid #980409;
+    background-color: rgb(255, 255, 255);
+    width: 80%;
+    font-size: 13px;
+}
+
+input[type="email"] {
+    margin-top: 90px;
+    margin-bottom: 40px;
+}
+
+input[type="tel"] {
+    margin-bottom: 30px;
+}
+
+input[type="checkbox"] {
+    height: 20px;
+    width: 20px;
+    padding-left: 0px;
+}
+
+input[type="checkbox"]:checked {
+    accent-color: #980409; /* Ensures the checkmark matches the background color */
+}
+
+
+#curationHead {
+    position: absolute;
+    top: 5px;
+    left: 50%;
+    transform: translateX(-50%); /* Center it horizontally */
+    background: rgba(255, 255, 255, 0); /* Optional: add a semi-transparent background for better visibility */
+    background-color: #ff000000;
+    font-size: 26px;
+    color: #980409;
+}
+
+.checkMessage {
+    display: flex;
+    flex-direction: row;
+    width: 80%;
+    align-items: center;
+}
+
+#checkMsg {
+    font-size: 13px;
+    margin-left: 20px;
+    color: #000000;
+}
+
+#userAgreement {
+    margin: 0;
+    font-size: 10px;
+    width: 80%;
+}
+
+.getEarlyAccess {
+    position: absolute;
+    bottom: 20px;
+    left: 20px;
+}
+
+.getEarlyAccess h2 {
+    font-size: 10px;
+    color: #980409;
+}
+
+.getEarlyAccess h2:hover {
+    cursor: pointer;
+    font-weight: bold;
+}
+
+

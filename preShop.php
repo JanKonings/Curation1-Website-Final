@@ -66,6 +66,8 @@
                 imagePaths.push(`Images/eggDrop/Untitled_Artwork-${i}-Picsart-BackgroundRemover.jpeg`);
             }
 
+            var crackCount;
+
             document.getElementById("eggClick").addEventListener("click", function () {
                 clickCount++;
 
@@ -74,11 +76,18 @@
                     animationImg.src = imagePaths[1]; // Show first frame
                     var audio = document.getElementById("crack");
                     audio.play();
-                    return; // Stop further execution
-                }
 
-                // Second click: Start the animation and play audio
-                if (clickCount === 2) {
+                    animationImg.classList.add("shake");
+
+                    // Remove class after animation ends (to allow re-triggering)
+                    setTimeout(() => {
+                        animationImg.classList.remove("shake");
+                    }, 500);
+
+                    crackCount = Math.floor(Math.random() * (4 - 2 + 1)) + 2;
+                    console.log(crackCount);
+                    return; // Stop further execution
+                } else if (clickCount === crackCount) {
                     animationImg.dataset.clicked = "true"; // Prevent further clicks
                     var audio = document.getElementById("crackSizzle");
                     audio.play();
@@ -117,6 +126,16 @@
                     // Start animation
                     const frameRate = 80;
                     let animationInterval = setInterval(updateImageSource, frameRate);
+                } else if (clickCount < crackCount) {
+                    var audio = document.getElementById("crack");
+                    audio.play();
+
+                    animationImg.classList.add("shake");
+
+                    // Remove class after animation ends (to allow re-triggering)
+                    setTimeout(() => {
+                        animationImg.classList.remove("shake");
+                    }, 500);
                 }
             });
         };
