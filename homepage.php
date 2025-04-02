@@ -1,3 +1,19 @@
+<?php
+    // Load the .env file
+    require_once 'vendor/autoload.php';  // If you're using Composer
+    $dotenv = Dotenv\Dotenv::createImmutable(__DIR__);
+    $dotenv->load();
+
+    // Get environment variables
+    $firebaseApiKey = getenv('FIREBASE_API_KEY');
+    $firebaseAuthDomain = getenv('FIREBASE_AUTH_DOMAIN');
+    $firebaseProjectId = getenv('FIREBASE_PROJECT_ID');
+    $firebaseStorageBucket = getenv('FIREBASE_STORAGE_BUCKET');
+    $firebaseMessagingSenderId = getenv('FIREBASE_MESSAGING_SENDER_ID');
+    $firebaseAppId = getenv('FIREBASE_APP_ID');
+    $firebaseMeasurementId = getenv('FIREBASE_MEASUREMENT_ID');
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -18,13 +34,13 @@
 
         // Firebase configuration
         const firebaseConfig = {
-            apiKey: "AIzaSyCR727DLmBrBtJXZkGLpa1AxR2sia46ZhM",
-            authDomain: "curation1.firebaseapp.com",
-            projectId: "curation1",
-            storageBucket: "curation1.firebasestorage.app",
-            messagingSenderId: "379839801859",
-            appId: "1:379839801859:web:d5fff7482523f7e5b77c36",
-            measurementId: "G-D2BXZYQEP4"
+            apiKey: "<?php echo $firebaseApiKey; ?>",  // Injected PHP variable
+            authDomain: "<?php echo $firebaseAuthDomain; ?>",
+            projectId: "<?php echo $firebaseProjectId; ?>",
+            storageBucket: "<?php echo $firebaseStorageBucket; ?>",
+            messagingSenderId: "<?php echo $firebaseMessagingSenderId; ?>",
+            appId: "<?php echo $firebaseAppId; ?>",
+            measurementId: "<?php echo $firebaseMeasurementId; ?>"
         };
 
         // Initialize Firebase
@@ -108,6 +124,7 @@
             </div>
             <form id="signupForm">
                 <h1 id="curationHead">Curation1</h1>
+                <h2 id="close">X</h2>
                 <!-- <label for="email">Email:</label> -->
                 <input type="email" id="email" required placeholder="Email Address"/>
 
