@@ -1,17 +1,5 @@
 <?php
-    // Load the .env file
-    require_once 'vendor/autoload.php';  // If you're using Composer
-    $dotenv = Dotenv\Dotenv::createImmutable(__DIR__);
-    $dotenv->load();
-
-    // Get environment variables
-    $firebaseApiKey = getenv('FIREBASE_API_KEY');
-    $firebaseAuthDomain = getenv('FIREBASE_AUTH_DOMAIN');
-    $firebaseProjectId = getenv('FIREBASE_PROJECT_ID');
-    $firebaseStorageBucket = getenv('FIREBASE_STORAGE_BUCKET');
-    $firebaseMessagingSenderId = getenv('FIREBASE_MESSAGING_SENDER_ID');
-    $firebaseAppId = getenv('FIREBASE_APP_ID');
-    $firebaseMeasurementId = getenv('FIREBASE_MEASUREMENT_ID');
+   
 ?>
 
 <!DOCTYPE html>
@@ -33,15 +21,7 @@
         import { getAuth } from 'https://www.gstatic.com/firebasejs/9.6.1/firebase-auth.js';
 
         // Firebase configuration
-        const firebaseConfig = {
-            apiKey: "<?php echo $firebaseApiKey; ?>",  // Injected PHP variable
-            authDomain: "<?php echo $firebaseAuthDomain; ?>",
-            projectId: "<?php echo $firebaseProjectId; ?>",
-            storageBucket: "<?php echo $firebaseStorageBucket; ?>",
-            messagingSenderId: "<?php echo $firebaseMessagingSenderId; ?>",
-            appId: "<?php echo $firebaseAppId; ?>",
-            measurementId: "<?php echo $firebaseMeasurementId; ?>"
-        };
+        
 
         // Initialize Firebase
         const app = initializeApp(firebaseConfig);
