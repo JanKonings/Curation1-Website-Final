@@ -1,5 +1,5 @@
 <?php
-   
+    include('validSessionCheck.php');
 ?>
 
 <!DOCTYPE html>
@@ -100,10 +100,11 @@
     <div class="earlyAccess">
         <div class="earlyAccessForm">
             <div id="sideImgBox">
-                <img src="Images/EarlyAccessImg.png" id="sideImg">
+                <!-- <img src="Images/EarlyAccessImg.png" id="sideImg"> -->
+                <img src="Images/HomePageLogo.JPG" id="sideImg">
             </div>
             <form id="signupForm">
-                <h1 id="curationHead">Curation1</h1>
+                <h1 id="curationHead">curation1</h1>
                 <h2 id="close">X</h2>
                 <!-- <label for="email">Email:</label> -->
                 <input type="email" id="email" required placeholder="Email Address"/>
@@ -134,8 +135,9 @@
         document.addEventListener("click", function (event) {
             const earlyAccessForm = document.querySelector(".earlyAccessForm");
             const earlyAccessToggle = document.getElementById("earlyAccessToggle");
+            const closeButton = document.getElementById("close");
 
-            if (!earlyAccessForm.contains(event.target) && event.target !== earlyAccessToggle) {
+            if (!earlyAccessForm.contains(event.target) && event.target !== earlyAccessToggle || event.target === closeButton) {
                 document.querySelector(".earlyAccess").style.display = "none";
             }
         });

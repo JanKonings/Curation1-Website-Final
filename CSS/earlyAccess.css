@@ -16,6 +16,7 @@
     height: 400px;
     display: flex;
     flex-direction: row;
+    border-radius: 20px;
 }
 
 #signupForm {
@@ -33,7 +34,19 @@
     justify-content: center;
     align-items: center;
     background-color: rgb(255, 255, 255);
+    position: relative;
 }
+
+#sideImgBox::after {
+    content: '';
+    position: absolute;
+    top: 10%;
+    right: 0;
+    width: 1px; /* Width of the border */
+    height: 80%; /* This will make the border only cover half the height */
+    background-color: #980409; /* The color of the border */
+}
+   
 
 label[for="phone"] {
     color: rgb(0, 0, 0);
@@ -41,7 +54,7 @@ label[for="phone"] {
 }
 
 #sideImg {
-    width: 100%;
+    width: 85%;
     height: auto;
 }
 
@@ -143,7 +156,10 @@ input[type="checkbox"]:checked {
     margin: 0;
     color: rgba(58, 52, 52, 0.468);
     font-size: 20px;
-    
+}
+
+#close:hover {
+    cursor: pointer;
 }
 
 
