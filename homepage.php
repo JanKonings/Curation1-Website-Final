@@ -13,42 +13,6 @@
     <link rel="stylesheet" type="text/css" href="CSS/earlyAccess.css">
     <script src="https://code.jquery.com/jquery-3.7.1.js" integrity="sha256-eKhayi8LEQwp4NKxN+CfCh+3qOVUtJn3QNZ0TciWLP4=" crossorigin="anonymous"></script>
     <script src="Javascript/script.js" defer></script>
-
-    <!-- Firebase SDK (using module imports) -->
-    <script type="module">
-        import { initializeApp } from 'https://www.gstatic.com/firebasejs/9.6.1/firebase-app.js';
-        import { getFirestore, collection, addDoc } from 'https://www.gstatic.com/firebasejs/9.6.1/firebase-firestore.js';
-        import { getAuth } from 'https://www.gstatic.com/firebasejs/9.6.1/firebase-auth.js';
-
-        // Firebase configuration
-       
-
-        // Initialize Firebase
-        const app = initializeApp(firebaseConfig);
-        const db = getFirestore(app);  // Firestore database reference
-        const auth = getAuth(app);     // Authentication reference
-
-        // Handle form submission
-        document.getElementById("signupForm").addEventListener("submit", async function (e) {
-            e.preventDefault();  // Prevent form from reloading the page
-
-            // Get user input
-            const email = document.getElementById("email").value;
-            const phone = document.getElementById("phone").value;
-
-            // Add user data to Firestore
-            try {
-                await addDoc(collection(db, "users"), {
-                    email: email,
-                    phone: phone
-                });
-                console.log("User data saved to Firestore!");
-                alert("Thanks for signing up! You'll receive a welcome message soon.");
-            } catch (error) {
-                console.error("Error saving user data:", error);
-            }
-        });
-    </script>
 </head>
 <body>
     <div class="header">
@@ -103,13 +67,11 @@
                 <!-- <img src="Images/EarlyAccessImg.png" id="sideImg"> -->
                 <img src="Images/HomePageLogo.JPG" id="sideImg">
             </div>
-            <form id="signupForm">
+            <!-- <form id="signupForm">
                 <h1 id="curationHead">curation1</h1>
                 <h2 id="close">X</h2>
-                <!-- <label for="email">Email:</label> -->
                 <input type="email" id="email" required placeholder="Email Address"/>
 
-                <!-- <label for="phone">Phone Number:</label> -->
                 <input type="tel" id="phone" required placeholder="Phone Number"/>
 
                 <div class="checkMessage">
@@ -120,7 +82,55 @@
                 <p id="userAgreement">By checking this box, I consent to receive marketing emails through an automatic email sending system at the email provided. Consent is not a condition to purchase. Check our privacy policy here</p>
 
                 <button id="earlyAccessButton" type="submit">SUBSCRIBE</button>
+            </form> -->
+            <form id="signupForm"
+                action="https://curation1.us14.list-manage.com/subscribe/post?u=7fb68a2e05e7a1ddaf719bfcf&amp;id=b11ffa7b7d&amp;f_id=00b8b4e5f0"
+                method="post"
+                target="_blank"
+                novalidate>
+            
+            <h1 id="curationHead">curation1</h1>
+            <h2 id="close">X</h2>
+
+            <input type="email" name="EMAIL" id="email" required placeholder="Email Address" />
+
+            <input type="tel" name="PHONE" id="phone" required placeholder="Phone Number" />
+
+            <div class="checkMessage">
+                <input type="checkbox" id="check" required>
+                <h2 id="checkMsg">Receive offers via Email</h2>
+            </div>
+
+            <p id="userAgreement">By checking this box, I consent to receive marketing emails...</p>
+
+            <!-- Honeypot field to prevent spam bots -->
+            <div style="position: absolute; left: -5000px;" aria-hidden="true">
+                <input type="text" name="b_7fb68a2e05e7a1ddaf719bfcf_b11ffa7b7d" tabindex="-1" value="">
+            </div>
+
+            <button id="earlyAccessButton" type="submit">SUBSCRIBE</button>
             </form>
+            
+            <script>
+                document.getElementById('signupForm').addEventListener('submit', function (e) {
+                    e.preventDefault(); // Stop the default redirect
+                    const form = e.target;
+                    const formData = new FormData(form);
+
+                    fetch(form.action, {
+                    method: form.method,
+                    mode: 'no-cors', // Prevents CORS errors (but limits response)
+                    body: formData
+                    }).then(() => {
+                    alert('Thank you for subscribing!');
+                    form.reset(); // Optional: clears form inputs
+                    }).catch((err) => {
+                    console.error('Submission error:', err);
+                    alert('Oops! Something went wrong.');
+                    });
+                });
+            </script>
+
         </div>
     </div>
     <div class="getEarlyAccess">
