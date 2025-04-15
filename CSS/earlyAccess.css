@@ -49,7 +49,7 @@
 
 label[for="phone"] {
     color: rgb(0, 0, 0);
-    margin-top: 20px;
+    /* margin-top: 20px; */
 }
 
 #sideImg {
@@ -87,9 +87,6 @@ input[type="email"] {
     margin-bottom: 40px;
 }
 
-input[type="tel"] {
-    margin-bottom: 30px;
-}
 
 input[type="checkbox"] {
     height: 20px;
@@ -162,3 +159,26 @@ input[type="checkbox"]:checked {
 }
 
 
+#phoneWrapper {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 30px;
+    width: 80%;
+    box-sizing: border-box;
+}
+
+#countryCode {
+    width: 50px;
+    border: none;
+    border-bottom: 1px solid #980409;
+    background-color: rgb(255, 255, 255);
+    font-size: 13px;
+    color: #757575;
+    outline: none;
+}
+
+input[type="tel"] {
+    padding-left: 10px;
+}

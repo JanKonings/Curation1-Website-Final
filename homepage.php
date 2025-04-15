@@ -67,12 +67,50 @@
                 <!-- <img src="Images/EarlyAccessImg.png" id="sideImg"> -->
                 <img src="Images/HomePageLogo.JPG" id="sideImg">
             </div>
-            <!-- <form id="signupForm">
+            <form id="signupForm">
                 <h1 id="curationHead">curation1</h1>
                 <h2 id="close">X</h2>
                 <input type="email" id="email" required placeholder="Email Address"/>
 
-                <input type="tel" id="phone" required placeholder="Phone Number"/>
+                <div id="phoneWrapper">
+                    <!-- Country Code Dropdown -->
+                    <select id="countryCode" required>
+                        <option value="+1" data-country="USA">+1&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;(USA)</option>
+                        <option value="+44" data-country="UK">+44&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;(UK)</option>
+                        <option value="+91" data-country="India">+91&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;(India)</option>
+                        <option value="+61" data-country="Australia">+61&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;(Australia)</option>
+                        <option value="+33" data-country="France">+33&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;(France)</option>
+                        <option value="+49" data-country="Germany">+49&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;(Germany)</option>
+                        <option value="+55" data-country="Brazil">+55&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;(Brazil)</option>
+                        <option value="+81" data-country="Japan">+81&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;(Japan)</option>
+                        <option value="+34" data-country="Spain">+34&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;(Spain)</option>
+                        <option value="+7" data-country="Russia">+7&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;(Russia)</option>
+                        <option value="+226" data-country="Burkina Faso">+226&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;(Burkina Faso)</option>
+                        <option value="+213" data-country="Algeria">+213&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;(Algeria)</option>
+                        <option value="+54" data-country="Argentina">+54&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;(Argentina)</option>
+                        <option value="+375" data-country="Belarus">+375&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;(Belarus)</option>
+                        <option value="+359" data-country="Bulgaria">+359&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;(Bulgaria)</option>
+                        <option value="+387" data-country="Bosnia and Herzegovina">+387&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;(Bosnia and Herzegovina)</option>
+                        <option value="+1-246" data-country="Barbados">+1-246&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;(Barbados)</option>
+                        <option value="+254" data-country="Kenya">+254&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;(Kenya)</option>
+                        <option value="+1-242" data-country="Bahamas">+1-242&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;(Bahamas)</option>
+                        <option value="+506" data-country="Costa Rica">+506&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;(Costa Rica)</option>
+                        <option value="+855" data-country="Cambodia">+855&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;(Cambodia)</option>
+                        <option value="+225" data-country="Ivory Coast">+225&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;(Ivory Coast)</option>
+                        <option value="+57" data-country="Colombia">+57&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;(Colombia)</option>
+                        <option value="+255" data-country="Tanzania">+255&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;(Tanzania)</option>
+                        <option value="+233" data-country="Ghana">+233&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;(Ghana)</option>
+                        <option value="+1-767" data-country="Dominica">+1-767&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;(Dominica)</option>
+                        <option value="+1-59" data-country="Saint Lucia">+1-59&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;(Saint Lucia)</option>
+
+
+                        <!-- Add more country codes as needed -->
+                    </select>
+                    <!-- Phone Number Input -->
+                    <input type="tel" id="phone" required placeholder="Phone Number" pattern="^\d{1,14}$" title="Phone number should only contain digits" />
+                </div>
+
+                <!-- <input type="tel" id="phone" required placeholder="Phone Number"/> -->
 
                 <div class="checkMessage">
                     <input type="checkbox" id="check" required>
@@ -82,60 +120,53 @@
                 <p id="userAgreement">By checking this box, I consent to receive marketing emails through an automatic email sending system at the email provided. Consent is not a condition to purchase. Check our privacy policy here</p>
 
                 <button id="earlyAccessButton" type="submit">SUBSCRIBE</button>
-            </form> -->
-            <form id="signupForm"
-                action="https://curation1.us14.list-manage.com/subscribe/post?u=7fb68a2e05e7a1ddaf719bfcf&amp;id=b11ffa7b7d&amp;f_id=00b8b4e5f0"
-                method="post"
-                target="_blank"
-                novalidate>
-            
-            <h1 id="curationHead">curation1</h1>
-            <h2 id="close">X</h2>
-
-            <input type="email" name="EMAIL" id="email" required placeholder="Email Address" />
-
-            <input type="tel" name="PHONE" id="phone" required placeholder="Phone Number" />
-
-            <div class="checkMessage">
-                <input type="checkbox" id="check" required>
-                <h2 id="checkMsg">Receive offers via Email</h2>
-            </div>
-
-            <p id="userAgreement">By checking this box, I consent to receive marketing emails...</p>
-
-            <!-- Honeypot field to prevent spam bots -->
-            <div style="position: absolute; left: -5000px;" aria-hidden="true">
-                <input type="text" name="b_7fb68a2e05e7a1ddaf719bfcf_b11ffa7b7d" tabindex="-1" value="">
-            </div>
-
-            <button id="earlyAccessButton" type="submit">SUBSCRIBE</button>
             </form>
-            
-            <script>
-                document.getElementById('signupForm').addEventListener('submit', function (e) {
-                    e.preventDefault(); // Stop the default redirect
-                    const form = e.target;
-                    const formData = new FormData(form);
 
-                    fetch(form.action, {
-                    method: form.method,
-                    mode: 'no-cors', // Prevents CORS errors (but limits response)
-                    body: formData
-                    }).then(() => {
-                    alert('Thank you for subscribing!');
-                    form.reset(); // Optional: clears form inputs
-                    }).catch((err) => {
-                    console.error('Submission error:', err);
-                    alert('Oops! Something went wrong.');
+            <script>
+                $(document).ready(function () {
+                    $("#signupForm").on("submit", function (e) {
+                        e.preventDefault();
+
+                        const email = $("#email").val();
+                        const countryCode = $("#countryCode").val(); // Get selected country code from dropdown
+                        const phone = $("#phone").val();
+
+                        // Validate phone number format
+                        const phonePattern = /^\d{1,14}$/; // Allow only digits, up to 14 characters
+                        if (!phonePattern.test(phone)) {
+                            alert("Please enter a valid phone number (only digits, no spaces or special characters).");
+                            return;
+                        }
+
+                        // Concatenate country code and phone number
+                        const fullPhone = countryCode + phone; // This is the full phone number to send
+                        console.log("Full Phone Number: ", fullPhone); // Debugging line
+                        console.log("Email: ", email); // Debugging line
+                        $.ajax({
+                            type: "POST",
+                            url: "signupToBrevo.php",
+                            data: {
+                                email: email,
+                                phone: fullPhone // Send the concatenated phone number
+                            },
+                            success: function (response) {
+                                alert("You're subscribed!");
+                                $("#signupForm")[0].reset();
+                            },
+                            error: function () {
+                                alert("Something went wrong. Please try again.");
+                            }
+                        });
                     });
                 });
-            </script>
 
+            </script>
         </div>
     </div>
     <div class="getEarlyAccess">
         <h2 id="earlyAccessToggle">Early Access</h2>
     </div>
+    
 
     <script>
         document.getElementById("earlyAccessToggle").addEventListener("click", function () {
@@ -151,6 +182,8 @@
                 document.querySelector(".earlyAccess").style.display = "none";
             }
         });
+
+        
     </script>
 </body>
 </html>
