@@ -1,9 +1,8 @@
 <?php
-    $apiKey = 
+    $apiKey = "";
     $listId = 3;
-    
     $email = $_POST['email'] ?? '';
-    $phone = $_POST['phone'] ?? '';
+    $phone = $_POST['phone'] ?? ''; 
     
     // Validate
     if (!$email || !$phone) {
@@ -26,7 +25,7 @@
     curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
     curl_setopt($ch, CURLOPT_POST, true);
     curl_setopt($ch, CURLOPT_HTTPHEADER, [
-        "api-key: $apiKey", // lowercase "api-key" is correct
+        "api-key: $apiKey", 
         "Content-Type: application/json",
         "Accept: application/json"
     ]);

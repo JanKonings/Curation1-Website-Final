@@ -63,13 +63,14 @@
     <!-- Sign Up Form -->
     <div class="earlyAccess">
         <div class="earlyAccessForm">
+            <h2 id="close">X</h2>
             <div id="sideImgBox">
                 <!-- <img src="Images/EarlyAccessImg.png" id="sideImg"> -->
                 <img src="Images/HomePageLogo.JPG" id="sideImg">
             </div>
             <form id="signupForm">
                 <h1 id="curationHead">curation1</h1>
-                <h2 id="close">X</h2>
+                <!-- <h2 id="close">X</h2> -->
                 <input type="email" id="email" required placeholder="Email Address"/>
 
                 <div id="phoneWrapper">
@@ -182,8 +183,6 @@
                 document.querySelector(".earlyAccess").style.display = "none";
             }
         });
-
-        
     </script>
 </body>
 </html>
