@@ -12,8 +12,9 @@
 }
 
 #countdownTimer {
-    font-size: 28px;
-    color: #f7f3e8;
+    font-size: 22px;
+    color: #f1f1f1;
+    font-family: 'La Belle Aurore', cursive;
 }
 
 .eggDrop {
@@ -29,7 +30,7 @@
 
 #timer {
     position: absolute;
-    bottom: 190px; /* Adjust this value to move the timer up or down */
+    bottom: 180px; /* Adjust this value to move the timer up or down */
     left: 50%;
     transform: translateX(-50%); /* Center it horizontally */
     background: rgba(255, 255, 255, 0); /* Optional: add a semi-transparent background for better visibility */

@@ -11,6 +11,13 @@
     <link rel="stylesheet" type="text/css" href="CSS/homepageCSS.css">
     <link rel="stylesheet" type="text/css" href="CSS/header.css">
     <link rel="stylesheet" type="text/css" href="CSS/earlyAccess.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=La+Belle+Aurore&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Caveat:wght@400..700&family=Cormorant:ital,wght@0,300..700;1,300..700&family=Geist:wght@100..900&family=Hind:wght@300;400;500;600;700&family=La+Belle+Aurore&family=Nunito+Sans:ital,opsz,wght@0,6..12,200..1000;1,6..12,200..1000&family=Outfit:wght@100..900&family=Yantramanav:wght@100;300;400;500;700;900&display=swap" rel="stylesheet">
+
     <script src="https://code.jquery.com/jquery-3.7.1.js" integrity="sha256-eKhayi8LEQwp4NKxN+CfCh+3qOVUtJn3QNZ0TciWLP4=" crossorigin="anonymous"></script>
     <script src="Javascript/script.js" defer></script>
 </head>
@@ -55,7 +62,7 @@
     </div>
 
     <ul id="homepageNav">
-        <li><a href="preShop.php">Shop</a></li>
+        <li><a href="Shop.php">Shop</a></li>
         <li><a href="AboutUs.php">About Us</a></li>
         <li><a href="Contact.html">Contact</a></li>
     </ul>
@@ -65,12 +72,10 @@
         <div class="earlyAccessForm">
             <h2 id="close">X</h2>
             <div id="sideImgBox">
-                <!-- <img src="Images/EarlyAccessImg.png" id="sideImg"> -->
-                <img src="Images/HomePageLogo.JPG" id="sideImg">
+                <img src="Images/transparentLogo.png" id="sideImg">
             </div>
             <form id="signupForm">
                 <h1 id="curationHead">curation1</h1>
-                <!-- <h2 id="close">X</h2> -->
                 <input type="email" id="email" required placeholder="Email Address"/>
 
                 <div id="phoneWrapper">
@@ -113,14 +118,14 @@
 
                 <!-- <input type="tel" id="phone" required placeholder="Phone Number"/> -->
 
-                <div class="checkMessage">
+                <!-- <div class="checkMessage">
                     <input type="checkbox" id="check" required>
                     <h2 id="checkMsg">Receive offers via Email</h2>
-                </div>
+                </div> -->
 
-                <p id="userAgreement">By checking this box, I consent to receive marketing emails through an automatic email sending system at the email provided. Consent is not a condition to purchase. Check our privacy policy here</p>
+                <p id="userAgreement">Sign up to join the waitlist and receive notifications about the <b>YOKED</b> drop</p>
 
-                <button id="earlyAccessButton" type="submit">SUBSCRIBE</button>
+                <button id="earlyAccessButton" type="submit">JOIN</button>
             </form>
 
             <script>
@@ -165,7 +170,7 @@
         </div>
     </div>
     <div class="getEarlyAccess">
-        <h2 id="earlyAccessToggle">Early Access</h2>
+        <h2 id="earlyAccessToggle">WAITLIST.</h2>
     </div>
     
 

@@ -24,7 +24,7 @@
             <li><a href="homepage.php">
                 <img id="home" src="Images/HomePageLogo.JPG" />
             </a></li>
-            <li><a href="preShop.php">Shop</a></li>
+            <li><a href="Shop.php">Shop</a></li>
             <li><a href="AboutUs.php">About Us</a></li>
             <li><a href="Contact.html">Contact</a></li>
         </ul>
@@ -35,34 +35,28 @@
     </div>
     <div class="cartContainer">
         <div class="shopItems"></div>
-        <div class="checkout">
-        </div>
+        <div class="checkout"></div>
         <button type="button" id="clearCart">Clear Cart</button>
         <button type="button" id="checkout">Checkout</button>
     </div>
-    
 
     <script>
-        window.onload = function() {
-            // Get cart data from localStorage
+        document.addEventListener("DOMContentLoaded", function () {
             const cartItems = JSON.parse(localStorage.getItem('cartItems')) || [];
-            
-            const cartContainer = document.querySelector('.cartContainer');
             const shopItemsContainer = document.querySelector('.shopItems');
             const checkoutContainer = document.querySelector('.checkout');
 
             if (cartItems.length === 0) {
-                // Display if the cart is empty
                 shopItemsContainer.innerHTML = `<h1 id="product">Your cart is empty.</h1>`;
-                checkoutContainer.innerHTML = `<h1 id="total">Total Price: $0</h1>`; 
+                checkoutContainer.innerHTML = `<h1 id="total">Total Price: $0</h1>`;
                 return;
             }
 
-            // We will dynamically create the HTML for cart items
             let cartHTML = '';
-            let i = 0;
+            let totalItems = 0;
             cartItems.forEach((item, index) => {
-                var subtotal = (220) * (item.quantity);
+                const subtotal = 220 * item.quantity;
+                totalItems += item.quantity;
                 cartHTML += `
                     <div class="cartItem" id="cartItem${index}">
                         <h1>Product: Denim Jeans</h1>
@@ -72,83 +66,73 @@
                         <h3 class="removeItem" id="killID${index}">X</h3>
                     </div>
                 `;
-                i++;
             });
 
-            // Insert the cart item HTML into the cart container
             shopItemsContainer.innerHTML = cartHTML;
+            checkoutContainer.innerHTML = `<h1 id="total">Total Price: $${totalItems * 220}</h1>`;
 
-            // Find the total number of items in the cart
-            let totalItems = cartItems.reduce((count, item) => {
-                return count + item.quantity;
-            }, 0);
-
-            var totalPrice = totalItems * 220;
-            checkoutContainer.innerHTML = `<h1 id="total">Total Price: $${totalPrice}</h1>`;
-
-            // Add event listeners to "X" buttons
             cartItems.forEach((item, index) => {
-                const removeButton = document.getElementById(`killID${index}`);
-                removeButton.addEventListener('click', function() {
-                    // Remove the item from the cartItems array
+                document.getElementById(`killID${index}`).addEventListener('click', () => {
                     cartItems.splice(index, 1);
-
-                    // Update localStorage with the new cart
                     localStorage.setItem('cartItems', JSON.stringify(cartItems));
-
-                    // Remove the cart item element from the DOM
-                    const cartItemElement = document.getElementById(`cartItem${index}`);
-                    cartItemElement.remove();
-
-                    // Update the total price
-                    updateCart();
+                    location.reload();
                 });
             });
 
-            // Clear cart functionality
-            document.getElementById('clearCart').addEventListener('click', function() {
-                // Clear localStorage
+            document.getElementById('clearCart').addEventListener('click', () => {
                 localStorage.removeItem('cartItems');
-
-                // Update the inline HTML to show an empty cart
-                shopItemsContainer.innerHTML = `<h1 id="product">Your cart is empty.</h1>`;
-                checkoutContainer.innerHTML = `<h1 id="total">Total Price: $0</h1>`;
+                location.reload();
             });
 
-            function updateCart() {
-                // Recalculate the total number of items and the price
-                let totalItems = cartItems.reduce((count, item) => {
-                    return count + item.quantity;
-                }, 0);
+            // document.getElementById('checkout').addEventListener('click', () => {
+            //     const cartItems = JSON.parse(localStorage.getItem('cartItems')) || [];
+            //     if (cartItems.length === 0) return;
 
-                var totalPrice = totalItems * 220;
+            //     // Build line items with `properties` for Shopify
+            //     const formData = cartItems.map(item => {
+            //         return {
+            //             id: "48356125376745", // your only variant ID
+            //             quantity: item.quantity,
+            //             properties: {
+            //                 Size: item.size
+            //             }
+            //         };
+            //     });
 
-                // Update the total price and display the cart
-                checkoutContainer.innerHTML = `<h1 id="total">Total Price: $${totalPrice}</h1>`;
-
-                // If the cart is empty, show the "empty" message
-                if (cartItems.length === 0) {
-                    shopItemsContainer.innerHTML = `<h1 id="product">Your cart is empty.</h1>`;
-                }
-            }
-
-            document.getElementById('checkout').addEventListener('click', function() {
+            //     fetch("https://y8hkdv-yg.myshopify.com/cart/add.js", {
+            //         method: "POST",
+            //         headers: {
+            //             "Content-Type": "application/json"
+            //         },
+            //         body: JSON.stringify(formData[0]) // Shopify only allows 1 item per add.js call
+            //     })
+            //     .then(response => {
+            //         if (!response.ok) throw new Error("Add to cart failed");
+            //         return response.json();
+            //     })
+            //     .then(() => {
+            //         window.location.href = "https://y8hkdv-yg.myshopify.com/cart";
+            //     })
+            //     .catch(err => {
+            //         console.error("Error:", err);
+            //         alert("Could not start checkout");
+            //     });
+            // });
+            document.getElementById('checkout').addEventListener('click', () => {
                 const cartItems = JSON.parse(localStorage.getItem('cartItems')) || [];
+                if (cartItems.length === 0) return;
 
-                // Create the Shopify cart URL
-                let cartURL = 'https://y8hkdv-yg.myshopify.com/cart/';
+                const parts = cartItems.map(item => {
+                    const props = encodeURIComponent(`properties[Size]=${item.size}`);
+                    return `updates[48356125376745]=${item.quantity}&${props}`;
+                });
 
-                // Loop through each item and add the variantId and quantity to the URL
-                let cartItemsString = cartItems.map(item => `${item.variantId}:${item.quantity}`).join(',');
-                cartURL += cartItemsString;
-
-                // Redirect to the Shopify cart
-                window.location.href = cartURL;
+                const checkoutUrl = `https://y8hkdv-yg.myshopify.com/cart?${parts.join('&')}`;
+                window.location.href = checkoutUrl;
             });
-        };
+
+
+        });
     </script>
-
-
-    </div>
 </body>
 </html>

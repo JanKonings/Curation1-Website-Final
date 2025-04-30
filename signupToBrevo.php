@@ -1,5 +1,4 @@
 <?php
-    $apiKey = "";
     $listId = 3;
     $email = $_POST['email'] ?? '';
     $phone = $_POST['phone'] ?? ''; 
