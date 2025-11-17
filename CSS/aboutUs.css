@@ -1,107 +1,26 @@
-/* .aboutContainer {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    padding-top: 50px;
+body {
+    margin: 0;
+    padding: 0;
+    background-color: #FFFBF6;
 }
 
-svg#letter {
-    width: 600px;
-    height: 400px;
-    margin-top: 70px;
-    box-sizing: border-box;
-    border: solid 5px #980409;
-    border-style: double;
-}
-
-.videoContainer img {
-    width: 40%;
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    transition: transform 0.5s ease-in-out; 
-}
-
-.videoContainer img:hover {
-    transform: translate(-50%, -50%) scale(1.1);
-    transition-duration: 0.5s;
-    cursor: pointer;
-}
-
-line {
-    stroke: #980409;
-    stroke-width: 2;
-}
-
-.videoContainer img:hover ~ .diagonalLine2 {
-    transform: rotate(-35deg);
-    transition-duration: 0.5s;
-    width: 44%;
-
-
-}
-.videoContainer img:hover ~ .diagonalLine1 {
-    transform: rotate(35deg);
-    transition-duration: 0.5s;
-    width: 44%;
-}
-
-
-.videoContainer {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    position: relative;
-    height: 400px;
-    width: 600px;
-    margin-top: 70px;
-    border: solid 5px #980409;
-    border-style: double;
-}
-
-.diagonalLine1 {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 45.5%;
-    height: 2px;
-    z-index: 1;
-    transform: rotate(40deg);
-    transition: transform 0.5s, width 0.5s; 
-    transform-origin: 0% 0%;
-    background: #980409;
-}
-
-.diagonalLine2 {
-    position: absolute;
-    top: 0;
-    right: 0;
-    z-index: 1;
-    width: 45.5%;
-    height: 2px;
-    transform: rotate(-40deg);
-    transition: transform 0.5s, width 0.5s; 
-    transform-origin: top right;
-    background: #980409;
-}
- */
-
-
- .letterContainer {
+.letterContainer {
     width: 100%;
-    min-height: 100vh;
+    height: 600px; /* Adjust this to match the visible letter size */
     display: flex;
     justify-content: center;
     align-items: center;
-}
-
-.letter {
-    display: flex;
-    position: relative;
 }
 
 #letterImg {
-    width: 600px;
-    height: auto;
+    width: 500px;
+    height: auto; /* force vertical fit */
 }
+
+@media (max-width: 550px) {
+    #letterImg {
+        width: 300px;
+        height: auto; /* force vertical fit */
+    }
+}
+

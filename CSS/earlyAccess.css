@@ -16,7 +16,8 @@
     display: flex;
     flex-direction: row;
     position: relative;
-    background-color: #fffaf6;
+    /* background-color: #fffaf6; */
+    background-color: #ffffff;
     overflow: hidden;
 }
 
@@ -25,7 +26,7 @@
     margin: 0;
     padding: 0;
     box-shadow: none;
-    background-color: #fffaf6;
+    background-color: #ffffff;
 }
 
 #sideImgBox,
@@ -42,7 +43,8 @@
     flex-direction: column;
     align-items: center;
     position: relative;
-    background-color: #fffaf6;
+    /* background-color: #fffaf6; */
+    background-color: #ffffff;
 
 }
 
@@ -51,7 +53,8 @@
     display: flex;
     justify-content: center;
     align-items: center;
-    background-color: #fffaf6;
+    /* background-color: #fffaf6; */
+    background-color: #ffffff;
     position: relative;
 }
 
@@ -62,7 +65,8 @@
     right: 0;
     width: 1px;
     height: 80%;
-    background-color: #980409; 
+    /* background-color: #980409;  */
+    background-color: black;
 }
    
 
@@ -79,7 +83,8 @@ label[for="phone"] {
 #earlyAccessButton {
     margin-top: 30px;
     width: 80%;
-    background-color: #c36d70;
+    /* background-color: #c36d70; */
+    background-color: #686666;
     border: none;
     padding: 12px;
     color: #ffffff;
@@ -90,7 +95,9 @@ label[for="phone"] {
 }
 
 #earlyAccessButton:hover {
-    background-color: #980409;
+    /* background-color: #980409; */
+    background-color: #000000;
+    cursor: pointer;
 }
 input[type="email"],
 input[type="tel"],
@@ -105,12 +112,14 @@ input[type="email"],
 input[type="tel"] {
     outline: none;
     border: none;
-    border-bottom: 1px solid #980409;
+    /* border-bottom: 1px solid #980409; */
+    border-bottom: 1px solid black;
     width: 80%;
     font-size: 16px;
     font-family: 'La Belle Aurore', cursive;
     /* font-family: 'Times New Roman', Times, serif; */
-    background-color: #fffaf6;
+    /* background-color: #fffaf6; */
+    background-color: #ffffff;
 }
 
 input[type="email"] {
@@ -141,7 +150,8 @@ input[type="checkbox"]:checked {
     background: rgba(255, 255, 255, 0); /* Optional: add a semi-transparent background for better visibility */
     background-color: #ff000000;
     font-size: 35px;
-    color: #980409;
+    /* color: #980409; */
+    color: black;
     font-family: 'La Belle Aurore', cursive;
 }
 
@@ -164,7 +174,8 @@ input[type="checkbox"]:checked {
     font-size: 20px;
     width: 80%;
     font-family: 'La Belle Aurore', cursive;
-    color: #980409;
+    /* color: #980409; */
+    color: black;
     text-align: center;
     line-height: 1.5;
 }
@@ -176,9 +187,23 @@ input[type="checkbox"]:checked {
     transform: translateX(-50%);
 }
 
+#earlyAccessToggle {
+    /* color: #980409; */
+    color: black;
+    font-size: 20px;
+    cursor: pointer;
+    font-weight: 100;
+}
+
+#earlyAccessToggle:hover {
+    cursor: pointer;
+    font-weight: bold;
+}
+
 .getEarlyAccess h2 {
     font-size: 19px;
-    color: #980409;
+    /* color: #980409; */
+    color: black;
     font-family: 'Caveat', cursive;
 }
 
@@ -196,7 +221,8 @@ input[type="checkbox"]:checked {
     font-size: 20px;
     z-index: 10;
     font-family: 'Caveat', cursive;
-    color: #980409;
+    /* color: #980409; */
+    color: black;
 }
 
 #close:hover {
@@ -216,12 +242,14 @@ input[type="checkbox"]:checked {
 #countryCode {
     width: 50px;
     border: none;
-    border-bottom: 1px solid #980409;
+    /* border-bottom: 1px solid #980409; */
+    border-bottom: 1px solid black;
     font-size: 13px;
     color: #757575;
     outline: none;
     height: 32.5px;
-    background-color: #fffaf6;
+    /* background-color: #fffaf6; */
+    background-color: #ffffff;
     font-family: 'La Belle Aurore', cursive;
     font-size: 16px;
 

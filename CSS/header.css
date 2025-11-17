@@ -1,8 +1,8 @@
 .header {
-    position: fixed;
+    /* position: fixed; */
     width: 100%;
     height: 50px;
-    background-color: #ffffff;
+    background: none;
     display: flex;
     justify-content: left;
     align-items: center;
@@ -12,6 +12,10 @@
     top: 0;
     left: 0;
     z-index: 1;
+    padding-left: 30px;
+    margin-top: 20px;
+    padding-right: 30px;
+
 }
 
 .hamburgerNav {
@@ -43,131 +47,69 @@
 }
 
 #cartIMG {
-    width: 100%;
+    width: 130%;
     height: auto;
 }
 
 #cart {
     position: relative;
-    display: inline-block;
+    display: flex;
+    justify-content: center;
+    align-items: center;
     width: 40px;
     height: inherit;
     margin-left: auto; 
     z-index: 2;
+    overflow: hidden;
 }
 
 #cartIMG:hover {
     cursor: pointer;
 }
 
-/* Nav Bar (hidden before burger click) */
 
 ul#nav {
-    position: fixed;
-    top: 7px;
-    left: 50%;  /* Initially position the nav at the center horizontally */
-    transform: translateX(-50%);  /* Adjust to perfectly center it */
-    width: 800px;   
-    height: 40px;   /* Set a fixed height for the navbar */
-    background-color: white;  /* Optional: Change background color */
     display: flex;
-    align-items: center;
-    justify-content: center;
+    flex-direction: row;
+    gap: 30px;
     list-style-type: none;
-    padding: 0;
-    margin: 0;
-    transition: left 0.5s ease-out; /* Smooth transition */
-    box-sizing: border-box;
 }
 
-ul#nav.active {
-    left: 50%;
-    transform: translateX(-50%);  /* Keep it centered */
-}
-
-ul#nav img {
-    width: 40px; 
-    height: auto; 
-}
-
-/* For Homepage li's */
-ul#nav li text {
-    color: #980409; 
+ul#nav a {
+    text-decoration: none;
+    font-family: 'caveat', sans-serif;
+    color: #464646;
     font-size: 25px;
-}
-
-ul#nav li {
-    display: inline-block; 
-    margin: 40px;
-} 
-
-ul#nav li a {
-    text-decoration: none; 
-    color: #980409; 
-    font-size: 25px;
-}
-
-ul#nav li a:hover {
-    font-weight: bold;
-}
-
-@media (max-width: 800px) {
-    ul#nav li {
-        margin: 25px;
-    }
-}
-
-@media (max-width: 650px) {
-    ul#nav li text {
-        font-size: 20px;
-    }
-
-    ul#nav li a {
-        font-size: 20px;
-    }
-
-    ul#nav li {
-        margin: 15px;
-    }
-}
-
-@media (max-width: 500px) {
-    ul#nav li a {
-        font-size: 15px;
-    }
-
-    ul#nav li {
-        margin: 10px;
-    }
-
-    ul#nav img {
-        width: 30px;
-        height: auto; 
-    }
-
-    .hamburgerNav {
-        width: 35px;
-    }
-
-    #cart {
-        width: 30px;
-    }
 }
 
 #headerCartCount {
     position: absolute;
-    top: 50%;
-    left: 50%;
+    top: 45%;
+    left: 55%;
     transform: translate(-50%, -50%);
     background-color: #980409;
     color: white;
     border-radius: 50%;
-    width: 20px;
-    height: 20px;
+    width: 15px;
+    height: 15px;
     display: flex;
     align-items: center;
     justify-content: center;
     font-size: 12px;
     font-weight: bold;
+    font-family: Arial, Helvetica, sans-serif
+}
+
+#headerLogo {
+    width: 70px;
+    height: auto;
+    margin-top: 10px;
+}
+
+@media (max-width: 480px) {
+    ul#nav {
+        gap: 15px;
+        justify-content: space-between;
+    }
 }
 

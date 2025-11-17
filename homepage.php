@@ -1,6 +1,4 @@
-<?php
-    include('validSessionCheck.php');
-?>
+<?php include 'validSessionCheck.php'; ?>
 
 <!DOCTYPE html>
 <html lang="en">
@@ -8,33 +6,40 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Home Page</title>
-    <link rel="stylesheet" type="text/css" href="CSS/homepageCSS.css">
-    <link rel="stylesheet" type="text/css" href="CSS/header.css">
-    <link rel="stylesheet" type="text/css" href="CSS/earlyAccess.css">
+    <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+    <link rel="stylesheet" type="text/css" href="CSS/homepageCSS.css?v=3">
+    <link rel="stylesheet" type="text/css" href="CSS/header.css?v=3">
+    <link rel="stylesheet" type="text/css" href="CSS/earlyAccess.css?v=3">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=La+Belle+Aurore&display=swap" rel="stylesheet">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Caveat:wght@400..700&family=Cormorant:ital,wght@0,300..700;1,300..700&family=Geist:wght@100..900&family=Hind:wght@300;400;500;600;700&family=La+Belle+Aurore&family=Nunito+Sans:ital,opsz,wght@0,6..12,200..1000;1,6..12,200..1000&family=Outfit:wght@100..900&family=Yantramanav:wght@100;300;400;500;700;900&display=swap" rel="stylesheet">
-
     <script src="https://code.jquery.com/jquery-3.7.1.js" integrity="sha256-eKhayi8LEQwp4NKxN+CfCh+3qOVUtJn3QNZ0TciWLP4=" crossorigin="anonymous"></script>
-    <script src="Javascript/script.js" defer></script>
+    <script src="Javascript/cartUtils.js?v=1"></script>
+    <script>
+        document.addEventListener("DOMContentLoaded", function() {
+            updateCartCount();
+        });
+    </script>    
 </head>
 <body>
     <div class="header">
-        <button class="hamburgerNav" id="hamburgerNav">
-            <span class="line"></span>
-            <span class="line"></span>
-            <span class="line"></span>
-        </button>
+        <!-- <a href="homepage.php"><img src="Images/logo.png" id="headerLogo"></a> -->
+        <a href="homepage.php"><img src="Images/logoBlack.png?v=1" id="headerLogo"></a>
+
 
         <ul id="nav">
-            <li><text>Pre - Order Coming soon!</text></li>
+            <li><a href="Shop.php">shop</a></li>
+            <li><a href="AboutUs.php">about us</a></li>
         </ul>
 
         <a id="cart" href="cart.php">
-            <img id="cartIMG" src="Images/cart.png" />
+            <img id="cartIMG" src="Images/cart.png?v=1" />
+            <div id="headerCartCount">0</div>
         </a>
     </div>
 
@@ -42,10 +47,11 @@
         <svg id="LogoWrap">
             <defs>
                 <path id="upperCurve" d="M 0,185 A 130,130 0 0,1 300,185"/>
-                <path id="lowerCurve" d="M 0,210 A 170,130 0 0,0 300,210"/>
+                <path id="lowerCurve" d="M 0,210 A 163,130 0 0,0 300,195"/>
             </defs>
         
-            <image id="Logo" href="Images/HomePageLogo.JPG" />
+            <!-- <image id="Logo" href="Images/logo.png?v=1" /> -->
+            <image id="Logo" href="Images/logoBlack.png?v=1" />
 
             <text>
                 <textPath class="logoText" href="#upperCurve" startOffset="50%">
@@ -64,7 +70,8 @@
     <ul id="homepageNav">
         <li><a href="Shop.php">Shop</a></li>
         <li><a href="AboutUs.php">About Us</a></li>
-        <li><a href="Contact.html">Contact</a></li>
+        <h2 id="earlyAccessToggle">E-LIST</h2>
+        <button onclick="window.location.href='logout.php'">Logout</button>
     </ul>
 
     <!-- Sign Up Form -->
@@ -72,7 +79,8 @@
         <div class="earlyAccessForm">
             <h2 id="close">X</h2>
             <div id="sideImgBox">
-                <img src="Images/transparentLogo.png" id="sideImg">
+                <!-- <img src="Images/transparentLogo.png" id="sideImg"> -->
+                 <img src="Images/logoBlack.JPG?v=1" id="sideImg">
             </div>
             <form id="signupForm">
                 <h1 id="curationHead">curation1</h1>
@@ -123,7 +131,7 @@
                     <h2 id="checkMsg">Receive offers via Email</h2>
                 </div> -->
 
-                <p id="userAgreement">Sign up to join the waitlist and receive notifications about the <b>YOKED</b> drop</p>
+                <p id="userAgreement">join e-list for <b>YOKED</b> updates and future products </p>
 
                 <button id="earlyAccessButton" type="submit">JOIN</button>
             </form>
@@ -169,9 +177,8 @@
             </script>
         </div>
     </div>
-    <div class="getEarlyAccess">
-        <h2 id="earlyAccessToggle">WAITLIST.</h2>
-    </div>
+    <!-- <div class="getEarlyAccess">
+    </div> -->
     
 
     <script>

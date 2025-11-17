@@ -1,3 +1,10 @@
+body {
+    font-family: 'caveat', sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #FFFBF6;
+}
+
 image#Logo {
     width: 300px; 
     height: 300px;
@@ -31,7 +38,8 @@ svg#LogoWrap {
 
 text {
     font-size: 40px;
-    fill: #980409;
+    /* fill: #980409; */
+    fill: black;
 }
 
 ul#homepageNav {
@@ -50,7 +58,8 @@ ul#homepageNav li {
 
 ul#homepageNav li a {
     text-decoration: none; 
-    color: #980409; 
+    /* color: #980409;  */
+    color: black;
     font-size: 27px;
 }
 

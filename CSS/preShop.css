@@ -64,3 +64,14 @@
     animation: shake 0.3s ease-in-out;
 }
 
+.instructions {
+    position: fixed;
+    top: 60px;
+    font-family: 'caveat', sans-serif;
+    left: 50%;
+    transform: translateX(-50%);
+    text-align: center;
+    color: #980409;
+    cursor: pointer;
+}
+
