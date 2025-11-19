@@ -1,5 +1,3 @@
-<?php include 'validSessionCheck.php'; ?>
-
 <!DOCTYPE html>
 <html>
 <head>
@@ -8,8 +6,9 @@
     <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
     <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
     <meta name="viewport" content="width=device-width, initial-scale=.75, maximum-scale=1, user-scalable=no">
-    <link rel="stylesheet" type="text/css" href="CSS/preShop.css?v=3">
-    <link rel="stylesheet" type="text/css" href="CSS/earlyAccess.css?v=3">
+    <link rel="stylesheet" type="text/css" href="CSS/preShop.css?v=4">
+    <link rel="stylesheet" type="text/css" href="CSS/earlyAccess.css?v=4">
+    <script src="Javascript/earlyAccessSubmit.js?v=2" defer></script>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=La+Belle+Aurore&display=swap" rel="stylesheet">
@@ -54,7 +53,7 @@
             <div id="eggClick">
                 <h1 class="instructions">shop now</h1>
             </div>
-            <img id="animation" src="Images/eggDrop/Untitled_Artwork-1-Picsart-BackgroundRemover.jpeg">
+            <img id="animation" src="Images/eggDropMidnight/IMG_0251-16.PNG?v=2" />
             <div id="timer">
                 <span id="countdownTimer" class="time"></span>
             </div>
@@ -68,15 +67,15 @@
             <h2 id="close">X</h2>
             <div id="sideImgBox">
                 <!-- <img src="Images/transparentLogo.png" id="sideImg"> -->
-                <img src="Images/logoBlack.JPG?v=1" id="sideImg">
-
+                 <img src="Images/logoBlack.JPG?v=2" id="sideImg">
             </div>
             <form id="signupForm">
-                <h1 id="curationHead">curation<span style="font-family: 'Caveat', cursive;">1</span></h1>
+                <h1 id="curationHead">curation1</h1>
                 <input type="email" id="email" required placeholder="Email Address"/>
 
                 <div id="phoneWrapper">
-                    <select id="countryCode" required>
+                    <!-- Country Code Dropdown -->
+                    <select id="countryCode" >
                         <option value="+1" data-country="USA">+1&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;(USA)</option>
                         <option value="+44" data-country="UK">+44&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;(UK)</option>
                         <option value="+91" data-country="India">+91&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;(India)</option>
@@ -104,12 +103,43 @@
                         <option value="+233" data-country="Ghana">+233&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;(Ghana)</option>
                         <option value="+1-767" data-country="Dominica">+1-767&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;(Dominica)</option>
                         <option value="+1-59" data-country="Saint Lucia">+1-59&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;(Saint Lucia)</option>
-                    </select>
 
-                    <input type="tel" id="phone" required placeholder="Phone Number" pattern="^\d{1,14}$" title="Phone number should only contain digits" />
+
+                        <!-- Add more country codes as needed -->
+                    </select>
+                    <!-- Phone Number Input -->
+                    <input type="tel" id="phone"  placeholder="Phone Number" pattern="^\d{1,14}$" title="Phone number should only contain digits" />
                 </div>
 
-                <p id="userAgreement">join e-list for <b>YOKED</b> updates and future products</p>
+                <!-- <input type="tel" id="phone" required placeholder="Phone Number"/> -->
+
+                <!-- <div class="checkMessage">
+                    <input type="checkbox" id="check" required>
+                    <h2 id="checkMsg">Receive offers via Email</h2>
+                </div> -->
+
+                <!-- <p id="userAgreement">join e-list for <b>YOKED</b> updates and future products </p> -->
+                <div class="consentBlock">
+                    <div class="checkboxCol">
+                        <input type="checkbox" id="smsOptIn" name="smsOptIn">
+                    </div>
+                    <div class="textCol">
+                        By checking this box and clicking ‘JOIN’ you consent to receive future product drop 
+                        alerts via SMS from curation1. Reply STOP to opt out. Reply HELP for help. Message and 
+                        data rates may apply. Message frequency may vary.                    </div>
+                </div>
+
+                <div class="consentBlock">
+                    <div class="checkboxCol">
+                        <input type="checkbox" id="termsOptIn" >
+                    </div>
+                    <div class="textCol">
+                        I agree to the <a href="terms.html">Terms and Conditions</a> and 
+                        <a href="privacy.html">Privacy Policy</a>. Your mobile information 
+                        will not be sold or shared with third parties for promotional purposes.
+                    </div>
+                </div>
+
 
                 <button id="earlyAccessButton" type="submit">JOIN</button>
             </form>
@@ -119,6 +149,6 @@
         <h2 id="earlyAccessToggle">E-LIST</h2>
     </div>
 
-    <script src="Javascript/index.js?v=2"></script>
+    <script src="Javascript/index.js?v=4"></script>
 </body>
 </html>

@@ -1,20 +1,33 @@
 <?php
     $listId = 3;
     $email = $_POST['email'] ?? '';
-    $phone = $_POST['phone'] ?? ''; 
+    $phone = $_POST['phone'] ?? '';
+    $smsOptIn = isset($_POST['smsOptIn']) && $_POST['smsOptIn'] == '1';
+
     
     // Validate
-    if (!$email || !$phone) {
+    if (!$email) {
         http_response_code(400);
-        echo "Missing email or phone";
+        echo "Missing email";
         exit;
+    }
+
+    $attributes = [];
+
+    if ($smsOptIn && $phone) {
+        // Only attach phone if they consented to SMS marketing
+        $attributes['SMS'] = $phone;
+        $attributes['SMS_MARKETING'] = true;   // custom attribute in Brevo
+    } else {
+        // Explicitly mark that they did NOT opt in (optional but nice to have)
+        $attributes['SMS_MARKETING'] = false;
     }
     
     // Build data
     $data = [
-        'email' => $email,
-        'attributes' => ['SMS' => $phone],
-        'listIds' => [$listId],
+        'email'         => $email,
+        'attributes'    => $attributes,
+        'listIds'       => [$listId],
         'updateEnabled' => true,
     ];
     

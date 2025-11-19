@@ -33,7 +33,8 @@
 #signupForm {
     margin: 0;
     border: none;
-    background-color: #fffaf6
+    /* background-color: #fffaf6 */
+    background-color: #ffffff;
 }
 
 #signupForm {
@@ -136,7 +137,7 @@ input[type="checkbox"] {
 }
 
 input[type="checkbox"]:checked {
-    accent-color: #980409; /* Ensures the checkmark matches the background color */
+    accent-color: #000000; /* Ensures the checkmark matches the background color */
 }
 
 
@@ -262,17 +263,43 @@ input[type="tel"] {
 }
 
 input:-webkit-autofill {
-    -webkit-box-shadow: 0 0 0px 1000px #fffaf6 inset;
-    box-shadow: 0 0 0px 1000px #fffaf6 inset;
+    -webkit-box-shadow: 0 0 0px 1000px #ffffff inset;
+    box-shadow: 0 0 0px 1000px #ffffff inset;
     -webkit-text-fill-color: #000;
 }
+
+.consentBlock {
+    display: flex;
+    align-items: flex-start;   /* ensures checkbox & first line align */
+    gap: 10px;
+    margin-bottom: 14px;
+    max-width: 90%; /* optional */
+}
+
+.checkboxCol input[type="checkbox"] {
+    width: 18px;
+    height: 18px;
+    margin-top: 2px; /* perfect vertical alignment */
+}
+
+.textCol {
+    font-size: 12px;
+    line-height: 1.4;
+    /* font-family: 'La Belle Aurore', cursive; */
+    font-family: 'Caveat', cursive;
+}
+
+.textCol a {
+    color: #000;
+    text-decoration: underline;
+}
+
 
 @media (max-width: 700px) {
     .earlyAccessForm {
         flex-direction: column;
         width: 60%;
         gap: 0;
-        background-color: #fffaf6;
         border: none;
         box-shadow: none;
     }
@@ -284,7 +311,6 @@ input:-webkit-autofill {
         max-height: 250px;
         margin-bottom: 0;
         border-bottom: none;
-        background-color: #fffaf6;
     }
 
     #sideImgBox::after {
@@ -297,7 +323,6 @@ input:-webkit-autofill {
     #signupForm {
         margin-top: 0;
         border-top: none;
-        background-color: #fffaf6;
     }
 
     #sideImg {

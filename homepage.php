@@ -9,9 +9,9 @@
     <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
     <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
     <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
-    <link rel="stylesheet" type="text/css" href="CSS/homepageCSS.css?v=3">
-    <link rel="stylesheet" type="text/css" href="CSS/header.css?v=3">
-    <link rel="stylesheet" type="text/css" href="CSS/earlyAccess.css?v=3">
+    <link rel="stylesheet" type="text/css" href="CSS/homepageCSS.css?v=4">
+    <link rel="stylesheet" type="text/css" href="CSS/header.css?v=4">
+    <link rel="stylesheet" type="text/css" href="CSS/earlyAccess.css?v=4">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=La+Belle+Aurore&display=swap" rel="stylesheet">
@@ -19,17 +19,19 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Caveat:wght@400..700&family=Cormorant:ital,wght@0,300..700;1,300..700&family=Geist:wght@100..900&family=Hind:wght@300;400;500;600;700&family=La+Belle+Aurore&family=Nunito+Sans:ital,opsz,wght@0,6..12,200..1000;1,6..12,200..1000&family=Outfit:wght@100..900&family=Yantramanav:wght@100;300;400;500;700;900&display=swap" rel="stylesheet">
     <script src="https://code.jquery.com/jquery-3.7.1.js" integrity="sha256-eKhayi8LEQwp4NKxN+CfCh+3qOVUtJn3QNZ0TciWLP4=" crossorigin="anonymous"></script>
-    <script src="Javascript/cartUtils.js?v=1"></script>
-    <script>
-        document.addEventListener("DOMContentLoaded", function() {
-            updateCartCount();
-        });
-    </script>    
+    <script src="Javascript/cartUtils.js?v=3"></script>
+    <script src="Javascript/earlyAccessSubmit.js?v=2"></script>
+
+    <style>
+        #earlyAccessToggle {
+            font-size: 23px;
+        }
+    </style>    
 </head>
 <body>
     <div class="header">
         <!-- <a href="homepage.php"><img src="Images/logo.png" id="headerLogo"></a> -->
-        <a href="homepage.php"><img src="Images/logoBlack.png?v=1" id="headerLogo"></a>
+        <a href="homepage.php"><img src="Images/logoBlack.png?v=2" id="headerLogo"></a>
 
 
         <ul id="nav">
@@ -38,7 +40,7 @@
         </ul>
 
         <a id="cart" href="cart.php">
-            <img id="cartIMG" src="Images/cart.png?v=1" />
+            <img id="cartIMG" src="Images/cart.png?v=2" />
             <div id="headerCartCount">0</div>
         </a>
     </div>
@@ -51,7 +53,7 @@
             </defs>
         
             <!-- <image id="Logo" href="Images/logo.png?v=1" /> -->
-            <image id="Logo" href="Images/logoBlack.png?v=1" />
+            <image id="Logo" href="Images/logoBlack.png?v=2" />
 
             <text>
                 <textPath class="logoText" href="#upperCurve" startOffset="50%">
@@ -80,7 +82,7 @@
             <h2 id="close">X</h2>
             <div id="sideImgBox">
                 <!-- <img src="Images/transparentLogo.png" id="sideImg"> -->
-                 <img src="Images/logoBlack.JPG?v=1" id="sideImg">
+                 <img src="Images/logoBlack.JPG?v=2" id="sideImg">
             </div>
             <form id="signupForm">
                 <h1 id="curationHead">curation1</h1>
@@ -88,7 +90,7 @@
 
                 <div id="phoneWrapper">
                     <!-- Country Code Dropdown -->
-                    <select id="countryCode" required>
+                    <select id="countryCode" >
                         <option value="+1" data-country="USA">+1&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;(USA)</option>
                         <option value="+44" data-country="UK">+44&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;(UK)</option>
                         <option value="+91" data-country="India">+91&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;(India)</option>
@@ -116,12 +118,9 @@
                         <option value="+233" data-country="Ghana">+233&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;(Ghana)</option>
                         <option value="+1-767" data-country="Dominica">+1-767&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;(Dominica)</option>
                         <option value="+1-59" data-country="Saint Lucia">+1-59&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;(Saint Lucia)</option>
-
-
-                        <!-- Add more country codes as needed -->
                     </select>
                     <!-- Phone Number Input -->
-                    <input type="tel" id="phone" required placeholder="Phone Number" pattern="^\d{1,14}$" title="Phone number should only contain digits" />
+                    <input type="tel" id="phone"  placeholder="Phone Number" pattern="^\d{1,14}$" title="Phone number should only contain digits" />
                 </div>
 
                 <!-- <input type="tel" id="phone" required placeholder="Phone Number"/> -->
@@ -131,70 +130,33 @@
                     <h2 id="checkMsg">Receive offers via Email</h2>
                 </div> -->
 
-                <p id="userAgreement">join e-list for <b>YOKED</b> updates and future products </p>
+                <!-- <p id="userAgreement">join e-list for <b>YOKED</b> updates and future products </p> -->
+                <div class="consentBlock">
+                    <div class="checkboxCol">
+                        <input type="checkbox" id="smsOptIn" name="smsOptIn">
+                    </div>
+                    <div class="textCol">
+                        By checking this box and clicking ‘JOIN’ you consent to receive future product drop 
+                        alerts via SMS from curation1. Reply STOP to opt out. Reply HELP for help. Message and 
+                        data rates may apply. Message frequency may vary.                    </div>
+                </div>
+
+                <div class="consentBlock">
+                    <div class="checkboxCol">
+                        <input type="checkbox" id="termsOptIn" >
+                    </div>
+                    <div class="textCol">
+                        I agree to the <a href="terms.html">Terms and Conditions</a> and 
+                        <a href="privacy.html">Privacy Policy</a>. Your mobile information 
+                        will not be sold or shared with third parties for promotional purposes.
+                    </div>
+                </div>
+
 
                 <button id="earlyAccessButton" type="submit">JOIN</button>
             </form>
-
-            <script>
-                $(document).ready(function () {
-                    $("#signupForm").on("submit", function (e) {
-                        e.preventDefault();
-
-                        const email = $("#email").val();
-                        const countryCode = $("#countryCode").val(); // Get selected country code from dropdown
-                        const phone = $("#phone").val();
-
-                        // Validate phone number format
-                        const phonePattern = /^\d{1,14}$/; // Allow only digits, up to 14 characters
-                        if (!phonePattern.test(phone)) {
-                            alert("Please enter a valid phone number (only digits, no spaces or special characters).");
-                            return;
-                        }
-
-                        // Concatenate country code and phone number
-                        const fullPhone = countryCode + phone; // This is the full phone number to send
-                        console.log("Full Phone Number: ", fullPhone); // Debugging line
-                        console.log("Email: ", email); // Debugging line
-                        $.ajax({
-                            type: "POST",
-                            url: "signupToBrevo.php",
-                            data: {
-                                email: email,
-                                phone: fullPhone // Send the concatenated phone number
-                            },
-                            success: function (response) {
-                                alert("You're subscribed!");
-                                $("#signupForm")[0].reset();
-                            },
-                            error: function () {
-                                alert("Something went wrong. Please try again.");
-                            }
-                        });
-                    });
-                });
-
-            </script>
         </div>
     </div>
-    <!-- <div class="getEarlyAccess">
-    </div> -->
-    
-
-    <script>
-        document.getElementById("earlyAccessToggle").addEventListener("click", function () {
-            document.querySelector(".earlyAccess").style.display = "flex";
-        });
-
-        document.addEventListener("click", function (event) {
-            const earlyAccessForm = document.querySelector(".earlyAccessForm");
-            const earlyAccessToggle = document.getElementById("earlyAccessToggle");
-            const closeButton = document.getElementById("close");
-
-            if (!earlyAccessForm.contains(event.target) && event.target !== earlyAccessToggle || event.target === closeButton) {
-                document.querySelector(".earlyAccess").style.display = "none";
-            }
-        });
-    </script>
+    <script src="Javascript/homepage.js?v=2"></script>
 </body>
 </html>

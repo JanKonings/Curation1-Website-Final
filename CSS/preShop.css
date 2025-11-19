@@ -13,7 +13,7 @@
 
 #countdownTimer {
     font-size: 22px;
-    color: #f1f1f1;
+    color: #ffffff;
     font-family: 'La Belle Aurore', cursive;
 }
 
@@ -30,7 +30,7 @@
 
 #timer {
     position: absolute;
-    bottom: 180px; /* Adjust this value to move the timer up or down */
+    bottom: 195px; /* Adjust this value to move the timer up or down */
     left: 50%;
     transform: translateX(-50%); /* Center it horizontally */
     background: rgba(255, 255, 255, 0); /* Optional: add a semi-transparent background for better visibility */
@@ -71,7 +71,7 @@
     left: 50%;
     transform: translateX(-50%);
     text-align: center;
-    color: #980409;
+    color: #000000;
     cursor: pointer;
 }
 

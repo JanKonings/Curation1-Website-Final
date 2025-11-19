@@ -47,7 +47,10 @@
     <link rel="stylesheet" type="text/css" href="CSS/password.css">
     <link rel="stylesheet" type="text/css" href="CSS/earlyAccess.css">
     <script src="https://code.jquery.com/jquery-3.7.1.js" integrity="sha256-eKhayi8LEQwp4NKxN+CfCh+3qOVUtJn3QNZ0TciWLP4=" crossorigin="anonymous"></script>
-    <script src="Javascript/script.js" defer></script>
+    <script src="Javascript/earlyAccessSubmit.js?v=2" defer></script>
+    <script src="Javascript/password.js?v=2" defer></script>
+
+
 
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -56,9 +59,9 @@
 <body>
     <div class="screen">
         <!-- <img src="Images/HomePageLogo.JPG" id="Logo"/> -->
-         <img src="Images/logoBlack.png?v=1" id="Logo"/>
+         <img src="Images/logoBlack.png?v=2" id="Logo"/>
         <form action="password.php" method="POST">
-            <img src="Images/cursor.png" id="cursor"/>
+            <img src="Images/cursorBlack.png?v=2" id="cursor"/>
             <input type="password" id="password" name="password" required>
 
             <!-- <button type="submit">Login</button> -->
@@ -77,7 +80,7 @@
             <h2 id="close">X</h2>
             <div id="sideImgBox">
                 <!-- <img src="Images/transparentLogo.png" id="sideImg"> -->
-                 <img src="Images/logoBlack.JPG?v=1" id="sideImg">
+                 <img src="Images/logoBlack.JPG?v=2" id="sideImg">
             </div>
             <form id="signupForm">
                 <h1 id="curationHead">curation1</h1>
@@ -85,7 +88,7 @@
 
                 <div id="phoneWrapper">
                     <!-- Country Code Dropdown -->
-                    <select id="countryCode" required>
+                    <select id="countryCode" >
                         <option value="+1" data-country="USA">+1&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;(USA)</option>
                         <option value="+44" data-country="UK">+44&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;(UK)</option>
                         <option value="+91" data-country="India">+91&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;(India)</option>
@@ -118,7 +121,7 @@
                         <!-- Add more country codes as needed -->
                     </select>
                     <!-- Phone Number Input -->
-                    <input type="tel" id="phone" required placeholder="Phone Number" pattern="^\d{1,14}$" title="Phone number should only contain digits" />
+                    <input type="tel" id="phone"  placeholder="Phone Number" pattern="^\d{1,14}$" title="Phone number should only contain digits" />
                 </div>
 
                 <!-- <input type="tel" id="phone" required placeholder="Phone Number"/> -->
@@ -128,105 +131,32 @@
                     <h2 id="checkMsg">Receive offers via Email</h2>
                 </div> -->
 
-                <p id="userAgreement">join e-list for <b>YOKED</b> updates and future products </p>
+                <!-- <p id="userAgreement">join e-list for <b>YOKED</b> updates and future products </p> -->
+                <div class="consentBlock">
+                    <div class="checkboxCol">
+                        <input type="checkbox" id="smsOptIn" name="smsOptIn">
+                    </div>
+                    <div class="textCol">
+                        By checking this box and clicking ‘JOIN’ you consent to receive future product drop 
+                        alerts via SMS from curation1. Reply STOP to opt out. Reply HELP for help. Message and 
+                        data rates may apply. Message frequency may vary.                    </div>
+                </div>
+
+                <div class="consentBlock">
+                    <div class="checkboxCol">
+                        <input type="checkbox" id="termsOptIn" >
+                    </div>
+                    <div class="textCol">
+                        I agree to the <a href="terms.html">Terms and Conditions</a> and 
+                        <a href="privacy.html">Privacy Policy</a>. Your mobile information 
+                        will not be sold or shared with third parties for promotional purposes.
+                    </div>
+                </div>
+
 
                 <button id="earlyAccessButton" type="submit">JOIN</button>
             </form>
-
-            <script>
-                $(document).ready(function () {
-                    $("#signupForm").on("submit", function (e) {
-                        e.preventDefault();
-
-                        const email = $("#email").val();
-                        const countryCode = $("#countryCode").val(); // Get selected country code from dropdown
-                        const phone = $("#phone").val();
-
-                        // Validate phone number format
-                        const phonePattern = /^\d{1,14}$/; // Allow only digits, up to 14 characters
-                        if (!phonePattern.test(phone)) {
-                            alert("Please enter a valid phone number (only digits, no spaces or special characters).");
-                            return;
-                        }
-
-                        // Concatenate country code and phone number
-                        const fullPhone = countryCode + phone; // This is the full phone number to send
-                        console.log("Full Phone Number: ", fullPhone); // Debugging line
-                        console.log("Email: ", email); // Debugging line
-                        $.ajax({
-                            type: "POST",
-                            url: "signupToBrevo.php",
-                            data: {
-                                email: email,
-                                phone: fullPhone // Send the concatenated phone number
-                            },
-                            success: function (response) {
-                                alert("You're subscribed!");
-                                $("#signupForm")[0].reset();
-                            },
-                            error: function () {
-                                alert("Something went wrong. Please try again.");
-                            }
-                        });
-                    });
-                });
-
-            </script>
         </div>
     </div>
-    <script>
-        document.getElementById("earlyAccessToggle").addEventListener("click", function () {
-            document.querySelector(".earlyAccess").style.display = "flex";
-        });
-
-        document.addEventListener("click", function (event) {
-            const earlyAccessForm = document.querySelector(".earlyAccessForm");
-            const earlyAccessToggle = document.getElementById("earlyAccessToggle");
-            const closeButton = document.getElementById("close");
-
-            if (!earlyAccessForm.contains(event.target) && event.target !== earlyAccessToggle || event.target === closeButton) {
-                document.querySelector(".earlyAccess").style.display = "none";
-            }
-        });
-    </script>
-    <script>
-        document.addEventListener('DOMContentLoaded', function() {
-            const passwordInput = document.getElementById('password');
-
-            document.addEventListener('click', function() {
-                passwordInput.focus();
-                const errorElement = document.querySelector('.error');
-                if (errorElement) {
-                    errorElement.textContent = '';
-                }
-            });
-                        
-            // Adjust input width as user types
-            passwordInput.addEventListener('input', function() {
-                this.style.width = Math.max(this.value.length, 1) + "ch";
-                const errorElement = document.querySelector('.error');
-                if (errorElement) {
-                    errorElement.textContent = '';
-                }
-            });
-
-            const cursorImg = document.getElementById('cursor');
-            const cursorBlink = setInterval(function() {
-                if (!passwordInput.matches(':focus') && passwordInput.value === '') {
-                    cursorImg.style.visibility = cursorImg.style.visibility === 'hidden' ? 'visible' : 'hidden';
-                }
-            }, 500);
-
-            passwordInput.addEventListener('focus', function() {
-                cursorImg.style.visibility = 'hidden'; // Use visibility instead of display
-
-            });
-
-            if (!/Mobi|Android|iPad|Tablet|Touch/i.test(navigator.userAgent)) {
-                passwordInput.focus();
-            }
-            
-        });
-    </script>
 </body>
 </html>

@@ -25,7 +25,8 @@ body {
     width: 370px;
     height: 550px;
     border-style: solid;
-    border-color: #980409;
+    /* border-color: #980409; */
+    border-color: black;
     border-width: 2px;
     position: relative;
     display: flex;
@@ -131,28 +132,35 @@ body {
     font-size: 23px;
     /* margin: 10px 0 10px 0; */
     background-color: #FFFBF6;
-    color: #980409;
+    /* color: #980409; */
+    color: black;
     text-align: center; 
     border-radius: 50%; /* Makes it a circle */
-    border: 1px solid #9F1E13;
+    /* border: 1px solid #9F1E13; */
+    border: 1px solid black;
 }
 
 .customRadio:checked + label {
-    background-color: #9F1E13;
+    /* background-color: #9F1E13; */
+    background-color: black;
     color: #ffffff;
-    border: 1px solid #9F1E13;
+    /* border: 1px solid #9F1E13; */
+    border: 1px solid black;
 }
 
 .customRadio:hover + label {
-    background-color: #9F1E13;
+    /* background-color: #9F1E13; */
+    background-color: black;
     color: #ffffff;
-    border: 1px solid #9F1E13;
+    /* border: 1px solid #9F1E13; */
+    border: 1px solid black;
 }
 
 #addToCart, #viewCart {
     width: 250px;
     height: 45px;
-    background-color: #9F1E13;
+    /* background-color: #9F1E13; */
+    background-color: black;
     color: #ffffff;
     border-radius: 7px;
     font-size: 22px;
@@ -185,7 +193,8 @@ body {
 #shopForm h1 {
     margin: 0;
     font-size: 55px;
-    color: #9F1E13;
+    /* color: #9F1E13; */
+    color: black;
     font-weight: bold;
 }
 
@@ -229,13 +238,16 @@ body {
     width: 40px;
     height: 40px;
     background-color: white;
-    color: #980409;
-    border: 1px solid #980409;
+    /* color: #980409; */
+    color: black;
+    /* border: 1px solid #980409; */
+    border: 1px solid black;
     border-radius: 50%;
 }
 
 .quantityOptions button:hover {
-    background-color: #980409;
+    /* background-color: #980409; */
+    background-color: black;
     color: white;
 }
 
@@ -246,8 +258,10 @@ body {
     width: 40px;
     height: 40px;
     background-color: white;
-    color: #980409;
-    border: 1px solid #980409;
+    /* color: #980409; */
+    color: black;
+    /* border: 1px solid #980409; */
+    border: 1px solid black;
     text-align: center;
     border-radius: 50%;
 }
@@ -280,17 +294,29 @@ body {
 }
 
 .diagonal-text span {
-    color: #bd3f4d;
-    font-size: 30px;
+    /* color: #bd3f4d; */
+    color: rgb(255, 255, 255);
+    -webkit-text-stroke: 2px black;
+    font-size: 40px;
     font-weight: bold;
     opacity: 0;
-    text-shadow: 4px 4px 8px rgba(255, 0, 0, 0.2);
+    /* text-shadow: 4px 4px 8px rgba(255, 0, 0, 0.2); */
 }
 
 .diagonal-text span.space {
     width: 20px;
     height: 1px;
     background: transparent;
+}
+
+.sizeOptions label.sold-out {
+    opacity: 0.3;
+    text-decoration: line-through;
+    cursor: not-allowed;
+}
+
+.sizeOptions input[disabled] + label {
+    pointer-events: none;
 }
 
 .diagonal-text span:nth-child(1) { margin-left: 0%; }
@@ -354,10 +380,8 @@ body {
         width: 40px;
         font-size: 23px;
         background-color: #FFFBF6;
-        color: #980409;
         text-align: center; 
         border-radius: 50%; /* Makes it a circle */
-        border: 1px solid #9F1E13;
     }
 
     .sizeOptions {
