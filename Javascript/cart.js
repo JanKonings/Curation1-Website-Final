@@ -85,7 +85,7 @@ document.addEventListener("DOMContentLoaded", function () {
         }
     });
 
-    // ✅ CHECKOUT HANDLER (premade + preorder logic)
+    // CHECKOUT HANDLER (premade + preorder logic)
     document.getElementById("checkout").addEventListener("click", async function () {
         const cartItems = JSON.parse(localStorage.getItem("cartItems")) || [];
         const accessToken = "152c935098af7d620d360cc0eebcec78"; // Storefront access token
@@ -176,10 +176,10 @@ document.addEventListener("DOMContentLoaded", function () {
             });
 
             const data = await response.json();
-            console.log("📦 Full Shopify API Response:", data);
+            console.log("Full Shopify API Response:", data);
 
             if (data.data?.cartCreate?.cart?.checkoutUrl) {
-                console.log("✅ Shopify Checkout URL:", data.data.cartCreate.cart.checkoutUrl);
+                console.log("Shopify Checkout URL:", data.data.cartCreate.cart.checkoutUrl);
                 localStorage.removeItem("cartItems");
                 window.location.href = data.data.cartCreate.cart.checkoutUrl;
             } else {
@@ -189,15 +189,15 @@ document.addEventListener("DOMContentLoaded", function () {
                 const topErrors = data.errors;
 
                 if (userErrors && userErrors.length > 0) {
-                    console.error("❌ Shopify userErrors:", userErrors);
+                    console.error("Shopify userErrors:", userErrors);
                 } else if (topErrors && topErrors.length > 0) {
-                    console.error("❌ Shopify GraphQL top-level errors:", topErrors);
+                    console.error("Shopify GraphQL top-level errors:", topErrors);
                 } else {
-                    console.error("❌ Unknown Shopify error:", data);
+                    console.error("Unknown Shopify error:", data);
                 }
             }
         } catch (error) {
-            console.error("❌ Network or parsing error:", error);
+            console.error("Network or parsing error:", error);
             alert("Network error when trying to contact Shopify.");
         }
     });
@@ -360,12 +360,12 @@ document.addEventListener("DOMContentLoaded", function () {
 
 //             const data = await response.json();
 
-//             // 🔍 Log the full response
-//             console.log("📦 Full Shopify API Response:", data);
+//             // Log the full response
+//             console.log("Full Shopify API Response:", data);
 
-//             // ✅ If successful, redirect to checkout
+//             // If successful, redirect to checkout
 //             if (data.data?.cartCreate?.cart?.checkoutUrl) {
-//             console.log("✅ Shopify Checkout URL:", data.data.cartCreate.cart.checkoutUrl);
+//             console.log("Shopify Checkout URL:", data.data.cartCreate.cart.checkoutUrl);
 //             localStorage.removeItem("cartItems");
 //             window.location.href = data.data.cartCreate.cart.checkoutUrl;
 //             } else {
@@ -375,15 +375,15 @@ document.addEventListener("DOMContentLoaded", function () {
 //             const topErrors = data.errors;
 
 //             if (userErrors && userErrors.length > 0) {
-//                 console.error("❌ Shopify userErrors:", userErrors);
+//                 console.error("Shopify userErrors:", userErrors);
 //             } else if (topErrors && topErrors.length > 0) {
-//                 console.error("❌ Shopify GraphQL top-level errors:", topErrors);
+//                 console.error("Shopify GraphQL top-level errors:", topErrors);
 //             } else {
-//                 console.error("❌ Unknown Shopify error:", data);
+//                 console.error("Unknown Shopify error:", data);
 //             }
 //             }
 //         } catch (error) {
-//             console.error("❌ Network or parsing error:", error);
+//             console.error("Network or parsing error:", error);
 //             alert("Network error when trying to contact Shopify.");
 //         }
 //     });

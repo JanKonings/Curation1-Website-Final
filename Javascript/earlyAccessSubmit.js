@@ -5,7 +5,7 @@ $(document).ready(function () {
         const email = $("#email").val();
         const countryCode = $("#countryCode").val(); // Get selected country code from dropdown
         const phone = $("#phone").val();
-        const smsOptIn = $("#smsOptIn").is(":checked") ? 1 : 0;  // <— here
+        const smsOptIn = $("#smsOptIn").is(":checked") ? 1 : 0; 
 
         if (!$("#termsOptIn").is(":checked")) {
             alert("You must agree to the Terms and Conditions and Privacy Policy.");
@@ -42,7 +42,7 @@ $(document).ready(function () {
             data: {
                 email: email,
                 phone: fullPhone, // Send the concatenated phone number
-                smsOptIn: smsOptIn   // <— send it to PHP
+                smsOptIn: smsOptIn   
 
             },
             success: function (response) {

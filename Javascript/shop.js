@@ -108,7 +108,7 @@ $(document).ready(async function () {
         }
 
     } catch (err) {
-        console.error("❌ Error checking Shopify stock:", err);
+        console.error("Error checking Shopify stock:", err);
         // If API fails, fail “open”: just treat as premade mode with no availability filtering
         isPreorderMode = false;
         initSizeAvailability(null);
@@ -158,7 +158,6 @@ function initSizeAvailability(availability) {
 }
 
 function activatePreorderUI() {
-    // 🔥 EDIT THESE SELECTORS / TEXTS TO MATCH YOUR HTML 🔥
 
     // Example: main product title
     const titleEl = document.getElementById("currProduct");

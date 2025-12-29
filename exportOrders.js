@@ -1,7 +1,7 @@
 const axios = require('axios');
 const fs = require('fs');
 
-
+   
 
 async function exportOrders() {
     try {
@@ -38,7 +38,7 @@ async function exportOrders() {
           if (item.properties && item.properties.length > 0) {
             for (const prop of item.properties) {
                 if (!waist && !inseam) {
-                    console.log(`❗ Missing size data in Order #${order.id} for item "${item.name}"`);
+                    console.log(`Missing size data in Order #${order.id} for item "${item.name}"`);
                   }
               if (prop.name.toLowerCase() === 'waist') waist = prop.value;
               if (prop.name.toLowerCase() === 'inseam') inseam = prop.value;
@@ -50,9 +50,9 @@ async function exportOrders() {
       }
   
       fs.writeFileSync('orders_with_sizes.csv', output);
-      console.log('✅ File created: orders_with_sizes.csv');
+      console.log('File created: orders_with_sizes.csv');
     } catch (err) {
-      console.error('❌ Error fetching orders:', err.response?.data || err.message);
+      console.error('Error fetching orders:', err.response?.data || err.message);
     }
   }
   
