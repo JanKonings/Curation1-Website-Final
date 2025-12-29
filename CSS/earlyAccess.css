@@ -130,15 +130,7 @@ input[type="email"] {
 }
 
 
-input[type="checkbox"] {
-    height: 20px;
-    width: 20px;
-    padding-left: 0px;
-}
 
-input[type="checkbox"]:checked {
-    accent-color: #000000; /* Ensures the checkmark matches the background color */
-}
 
 
 #curationHead {
@@ -191,7 +183,7 @@ input[type="checkbox"]:checked {
 #earlyAccessToggle {
     /* color: #980409; */
     color: black;
-    font-size: 20px;
+    font-size: 23px;
     cursor: pointer;
     font-weight: 100;
 }
@@ -253,7 +245,6 @@ input[type="checkbox"]:checked {
     background-color: #ffffff;
     font-family: 'La Belle Aurore', cursive;
     font-size: 16px;
-
 }
 
 input[type="tel"] {
@@ -277,9 +268,14 @@ input:-webkit-autofill {
 }
 
 .checkboxCol input[type="checkbox"] {
-    width: 18px;
-    height: 18px;
+    width: 15px;
+    height: 15px;
     margin-top: 2px; /* perfect vertical alignment */
+    padding-left: 0px;
+}
+
+input[type="checkbox"]:checked {
+    accent-color: #000000; /* Ensures the checkmark matches the background color */
 }
 
 .textCol {
@@ -347,9 +343,45 @@ input:-webkit-autofill {
     }
 }
 
-@media (max-width: 400px) {
-    #checkMsg {
+@media (max-width: 700px) {
+    /* #checkMsg {
         font-size: 12px;
         margin-left: 10px;
+    } */
+    .textCol {
+        font-size: 9px;
+    }
+
+    #curationHead {
+        font-size: 25px;
+    }
+
+    input[type="email"],
+    input[type="tel"] {
+        font-size: 12px;
+    }
+
+    input[type="email"] {
+        margin-top: 50px;
+        margin-bottom: 25px;
+        box-sizing: border-box;
+    }
+
+    .checkboxCol input[type="checkbox"] {
+        width: 12px;
+        height: 12px;
+    }
+
+
+    #earlyAccessButton {
+        margin-top: 20px;
+        margin-bottom: 20px;
+        font-size: 14px;
+        padding: 8px;
+    }
+
+    #countryCode {
+        font-size: 12px;
+        width: 35px;
     }
 }

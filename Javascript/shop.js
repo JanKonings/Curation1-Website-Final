@@ -1,4 +1,3 @@
-
 // Map waist/inseam -> Shopify variant ID
 const VARIANT_MAP = {
     "28-30": "gid://shopify/ProductVariant/49386435870953",
@@ -11,11 +10,27 @@ const VARIANT_MAP = {
     "34-32": "gid://shopify/ProductVariant/49386436067561",
 };
 
+const PREORDER_VARIANT_ID = "gid://shopify/ProductVariant/48356125376745"; 
+
+let isPreorderMode = false;
+
+function activateSoldOutUI() {
+    const btn = document.getElementById("addToCart");
+    if (btn) {
+        btn.disabled = true;
+        btn.textContent = "Sold Out";
+        btn.classList.add("sold-out");   
+    }
+}
+
 $(document).ready(async function () {
     const accessToken = "152c935098af7d620d360cc0eebcec78"; // your Storefront token
     const shopifyDomain = "y8hkdv-yg.myshopify.com";
 
-    const variantIds = Object.values(VARIANT_MAP);
+    const variantIds = [
+        ...Object.values(VARIANT_MAP),   // spread the values
+        PREORDER_VARIANT_ID
+    ];
 
     const query = `
     query ($ids: [ID!]!) {
@@ -23,12 +38,11 @@ $(document).ready(async function () {
         ... on ProductVariant {
             id
             availableForSale
+            quantityAvailable
         }
         }
     }
     `;
-
-    let availability = {}; // id -> true/false
 
     try {
         const response = await fetch(`https://${shopifyDomain}/api/2023-10/graphql.json`, {
@@ -46,20 +60,57 @@ $(document).ready(async function () {
         const result = await response.json();
         console.log("Variant availability response:", result);
 
+        let availability = {};        
+        let preorderAvailable = null; 
+
         if (result.data && result.data.nodes) {
             result.data.nodes.forEach(node => {
                 if (node) {
+                    // normal variants
                     availability[node.id] = node.availableForSale;
+
+                    // preorder variant special logic
+                    if (node.id === PREORDER_VARIANT_ID) {
+                        const qty = typeof node.quantityAvailable === "number"
+                            ? node.quantityAvailable
+                            : 999999; 
+
+                        preorderAvailable = node.availableForSale && qty > 0;
+                    }
                 }
             });
         }
 
         // after we know stock, wire up the size UI
-        initSizeAvailability(availability);
+        // initSizeAvailability(availability);
+
+        // 👉 check if ANY premade variant is still in stock
+        const premadeIds = Object.values(VARIANT_MAP);
+        const anyInStock = premadeIds.some(id => availability[id]);
+
+        if (anyInStock) {
+            console.log("Premade mode: at least one size in stock");
+            isPreorderMode = false;
+            initSizeAvailability(availability);   // use normal per-size availability
+        } else {
+            console.log("All premade variants sold out");
+
+            if (preorderAvailable) {
+                console.log("Preorder variant in stock – switch to PREORDER mode");
+                isPreorderMode = true;
+                activatePreorderUI();             // change headers/button text etc.
+                initSizeAvailability(null);       // allow all sizes, no disabling
+            } else {
+                console.log("Preorder also sold out – fully sold out");
+                isPreorderMode = false;
+                activateSoldOutUI();              // 👈 new function below
+            }
+        }
 
     } catch (err) {
         console.error("❌ Error checking Shopify stock:", err);
-        // if API fails, just leave everything selectable
+        // If API fails, fail “open”: just treat as premade mode with no availability filtering
+        isPreorderMode = false;
         initSizeAvailability(null);
     }
 });
@@ -106,18 +157,69 @@ function initSizeAvailability(availability) {
     updateWaistOptions();
 }
 
+function activatePreorderUI() {
+    // 🔥 EDIT THESE SELECTORS / TEXTS TO MATCH YOUR HTML 🔥
+
+    // Example: main product title
+    const titleEl = document.getElementById("currProduct");
+    if (titleEl) {
+        titleEl.textContent = "(PREORDER)";
+    }
+
+    // Example: subtitle / description line
+    const subtitleEl = document.getElementById("purchaseInfo");
+    if (subtitleEl) {
+        subtitleEl.innerHTML = "14.5oz black bull selvedge denim <br> fabric and trims sourced from japan <br> wide leg, slight flare, made in NYC <br> preorder, please allow 7 - 9 weeks to ship";
+    }
+
+    // Add WAIST SIZE 36 for preorder
+    const sizeContainer = document.querySelector('.sizeOptions');
+
+    // Only add it once
+    if (!document.getElementById("36")) {
+        const input = document.createElement("input");
+        input.type = "radio";
+        input.name = "waist";
+        input.id = "36";
+        input.className = "customRadio";
+        input.value = "36";
+
+        const label = document.createElement("label");
+        label.setAttribute("for", "36");
+        label.textContent = "36";
+
+        sizeContainer.appendChild(input);
+        sizeContainer.appendChild(label);
+    }
+}
+
 $(document).ready(function() {
     // Check for existing cart items on page load
     updateCartCount();
 
+    // const images = [
+    //     'Images/indigo1v1.png',
+    //     'Images/indigo2v1.png',
+    //     'Images/indigo3v1.png',
+    //     'Images/indigo4v1.png'
+    //     // 'Images/indigo5.png',
+    //     // 'Images/indigo6.png'
+    // ];
+
     const images = [
-        'Images/indigo1v1.png',
-        'Images/indigo2v1.png',
-        'Images/indigo3v1.png',
-        'Images/indigo4v1.png'
-        // 'Images/indigo5.png',
-        // 'Images/indigo6.png'
+        'Images/midnight1.png',
+        'Images/midnight2.png',
+        'Images/midnight3.png',
+        'Images/midnight4.png'
     ];
+
+    const preloadedImages = [];
+
+    images.forEach(src => {
+        const img = new Image();
+        img.src = src;
+        preloadedImages.push(img);
+    });
     
     let currentImageIndex = 0;
     const shopImg = document.getElementById('shopImg');
@@ -192,7 +294,8 @@ $(document).ready(function() {
             cartItems.push({
                 waist: waist,
                 inseam: inseam,
-                quantity: 1
+                quantity: 1,
+                mode: isPreorderMode ? "preorder" : "premade"
             });
         }
 
@@ -202,7 +305,6 @@ $(document).ready(function() {
         // Update cart count
         updateCartCount();
 
-        // --- Play animation (your existing logic follows) ---
         const itemAdded = document.querySelector('.itemAdded');
         const letters = itemAdded.querySelectorAll('.diagonal-text span');
         var audio = document.getElementById("straw");

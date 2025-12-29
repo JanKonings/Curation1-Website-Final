@@ -2,13 +2,14 @@
 <html>
 <head>
     <title>Shop Page</title>
-    <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
-    <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
-    <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+    <link rel="icon" href="/favicon.ico" type="image/x-icon">
+    <link rel="apple-touch-icon" sizes="180x180" href="apple-touch-icon.png?v=3">
+    <link rel="icon" type="image/png" sizes="32x32" href="favicon-32x32.png?v=3">
+    <link rel="icon" type="image/png" sizes="16x16" href="favicon-16x16.png?v=3">
     <meta name="viewport" content="width=device-width, initial-scale=.75, maximum-scale=1, user-scalable=no">
-    <link rel="stylesheet" type="text/css" href="CSS/preShop.css?v=4">
-    <link rel="stylesheet" type="text/css" href="CSS/earlyAccess.css?v=4">
-    <script src="Javascript/earlyAccessSubmit.js?v=2" defer></script>
+    <link rel="stylesheet" type="text/css" href="CSS/preShop.css?v=6">
+    <link rel="stylesheet" type="text/css" href="CSS/earlyAccess.css?v=8">
+    <script src="Javascript/earlyAccessSubmit.js?v=4" defer></script>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=La+Belle+Aurore&display=swap" rel="stylesheet">
@@ -53,7 +54,7 @@
             <div id="eggClick">
                 <h1 class="instructions">shop now</h1>
             </div>
-            <img id="animation" src="Images/eggDropMidnight/IMG_0251-16.PNG?v=2" />
+            <img id="animation" src="Images/eggDropMidnight/IMG_0251-16.PNG?v=3" />
             <div id="timer">
                 <span id="countdownTimer" class="time"></span>
             </div>
@@ -67,7 +68,7 @@
             <h2 id="close">X</h2>
             <div id="sideImgBox">
                 <!-- <img src="Images/transparentLogo.png" id="sideImg"> -->
-                 <img src="Images/logoBlack.JPG?v=2" id="sideImg">
+                 <img src="Images/logoBlack.JPG?v=3" id="sideImg">
             </div>
             <form id="signupForm">
                 <h1 id="curationHead">curation1</h1>
@@ -149,6 +150,6 @@
         <h2 id="earlyAccessToggle">E-LIST</h2>
     </div>
 
-    <script src="Javascript/index.js?v=4"></script>
+    <script src="Javascript/index.js?v=3"></script>
 </body>
 </html>

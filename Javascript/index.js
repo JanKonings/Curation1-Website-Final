@@ -134,7 +134,8 @@ window.onload = function () {
 
 
                         // Start countdown
-                        const targetDate = new Date(Date.UTC(2025, 11, 1, 20, 0, 0)); 
+                        const targetDate = Date.UTC(2025, 11, 5, 18, 16, 0); 
+
 
                         // const targetDate = new Date().getTime() + 5000; // 5 seconds from now for testing
 

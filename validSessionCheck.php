@@ -2,7 +2,10 @@
     // 1) If after unlock time → no protection
     // Example: December 1, 2025 at 12:00 PM PST
     // PST = UTC-8 → 20:00 UTC
-    $unlock_timestamp = strtotime('2025-12-01 20:00:00 UTC');
+    $unlock_timestamp = (new DateTime(
+                            '2025-12-05 10:00:00',
+                            new DateTimeZone('America/Los_Angeles')
+                        ))->getTimestamp();
 
     if (time() >= $unlock_timestamp) {
         // OPTIONAL: clear any old session state

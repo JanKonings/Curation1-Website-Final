@@ -6,8 +6,7 @@
         exit;
     }
 
-    // Set the correct password
-    $correct_password = "stinkybuttnoah"; // Replace this with your actual password
+  
 
     // Initialize error message variable
     $error_message = "";
@@ -27,7 +26,7 @@
                 $_SESSION['LAST_ACTIVITY'] = time();
 
                 // Redirect to the homepage
-                header("Location: index.php");
+                header("Location: homepage.php");
                 exit;
             } else {
                 // Set error message if the password is incorrect
@@ -44,11 +43,11 @@
 <head>
     <title>Shop Page</title>
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
-    <link rel="stylesheet" type="text/css" href="CSS/password.css">
-    <link rel="stylesheet" type="text/css" href="CSS/earlyAccess.css">
+    <link rel="stylesheet" type="text/css" href="CSS/password.css?v=2">
+    <link rel="stylesheet" type="text/css" href="CSS/earlyAccess.css?v=6">
     <script src="https://code.jquery.com/jquery-3.7.1.js" integrity="sha256-eKhayi8LEQwp4NKxN+CfCh+3qOVUtJn3QNZ0TciWLP4=" crossorigin="anonymous"></script>
-    <script src="Javascript/earlyAccessSubmit.js?v=2" defer></script>
-    <script src="Javascript/password.js?v=2" defer></script>
+    <script src="Javascript/earlyAccessSubmit.js?v=4" defer></script>
+    <script src="Javascript/password.js?v=4" defer></script>
 
 
 
@@ -59,9 +58,9 @@
 <body>
     <div class="screen">
         <!-- <img src="Images/HomePageLogo.JPG" id="Logo"/> -->
-         <img src="Images/logoBlack.png?v=2" id="Logo"/>
+         <img src="Images/logoBlack.png?v=3" id="Logo"/>
         <form action="password.php" method="POST">
-            <img src="Images/cursorBlack.png?v=2" id="cursor"/>
+            <img src="Images/cursorBlack.png?v=3" id="cursor"/>
             <input type="password" id="password" name="password" required>
 
             <!-- <button type="submit">Login</button> -->
@@ -80,7 +79,7 @@
             <h2 id="close">X</h2>
             <div id="sideImgBox">
                 <!-- <img src="Images/transparentLogo.png" id="sideImg"> -->
-                 <img src="Images/logoBlack.JPG?v=2" id="sideImg">
+                 <img src="Images/logoBlack.JPG?v=3" id="sideImg">
             </div>
             <form id="signupForm">
                 <h1 id="curationHead">curation1</h1>

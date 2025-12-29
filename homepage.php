@@ -6,12 +6,13 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Home Page</title>
-    <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
-    <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
-    <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
-    <link rel="stylesheet" type="text/css" href="CSS/homepageCSS.css?v=4">
-    <link rel="stylesheet" type="text/css" href="CSS/header.css?v=4">
-    <link rel="stylesheet" type="text/css" href="CSS/earlyAccess.css?v=4">
+    <link rel="icon" href="/favicon.ico" type="image/x-icon">
+    <link rel="apple-touch-icon" sizes="180x180" href="apple-touch-icon.png?v=3">
+    <link rel="icon" type="image/png" sizes="32x32" href="favicon-32x32.png?v=3">
+    <link rel="icon" type="image/png" sizes="16x16" href="favicon-16x16.png?v=3">
+    <link rel="stylesheet" type="text/css" href="CSS/homepageCSS.css?v=7">
+    <link rel="stylesheet" type="text/css" href="CSS/header.css?v=7">
+    <link rel="stylesheet" type="text/css" href="CSS/earlyAccess.css?v=8">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=La+Belle+Aurore&display=swap" rel="stylesheet">
@@ -19,19 +20,14 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Caveat:wght@400..700&family=Cormorant:ital,wght@0,300..700;1,300..700&family=Geist:wght@100..900&family=Hind:wght@300;400;500;600;700&family=La+Belle+Aurore&family=Nunito+Sans:ital,opsz,wght@0,6..12,200..1000;1,6..12,200..1000&family=Outfit:wght@100..900&family=Yantramanav:wght@100;300;400;500;700;900&display=swap" rel="stylesheet">
     <script src="https://code.jquery.com/jquery-3.7.1.js" integrity="sha256-eKhayi8LEQwp4NKxN+CfCh+3qOVUtJn3QNZ0TciWLP4=" crossorigin="anonymous"></script>
-    <script src="Javascript/cartUtils.js?v=3"></script>
-    <script src="Javascript/earlyAccessSubmit.js?v=2"></script>
-
-    <style>
-        #earlyAccessToggle {
-            font-size: 23px;
-        }
-    </style>    
+    <script src="Javascript/cartUtils.js?v=6"></script>
+    <script src="Javascript/earlyAccessSubmit.js?v=4"></script>
+  
 </head>
 <body>
     <div class="header">
         <!-- <a href="homepage.php"><img src="Images/logo.png" id="headerLogo"></a> -->
-        <a href="homepage.php"><img src="Images/logoBlack.png?v=2" id="headerLogo"></a>
+        <a href="homepage.php"><img src="Images/logoBlack.png?v=3" id="headerLogo"></a>
 
 
         <ul id="nav">
@@ -40,7 +36,7 @@
         </ul>
 
         <a id="cart" href="cart.php">
-            <img id="cartIMG" src="Images/cart.png?v=2" />
+            <img id="cartIMG" src="Images/cart.png?v=4" />
             <div id="headerCartCount">0</div>
         </a>
     </div>
@@ -53,7 +49,7 @@
             </defs>
         
             <!-- <image id="Logo" href="Images/logo.png?v=1" /> -->
-            <image id="Logo" href="Images/logoBlack.png?v=2" />
+            <image id="Logo" href="Images/logoBlack.png?v=3" />
 
             <text>
                 <textPath class="logoText" href="#upperCurve" startOffset="50%">
@@ -73,7 +69,7 @@
         <li><a href="Shop.php">Shop</a></li>
         <li><a href="AboutUs.php">About Us</a></li>
         <h2 id="earlyAccessToggle">E-LIST</h2>
-        <button onclick="window.location.href='logout.php'">Logout</button>
+        <!-- <button onclick="window.location.href='logout.php'">Logout</button> -->
     </ul>
 
     <!-- Sign Up Form -->
@@ -82,7 +78,7 @@
             <h2 id="close">X</h2>
             <div id="sideImgBox">
                 <!-- <img src="Images/transparentLogo.png" id="sideImg"> -->
-                 <img src="Images/logoBlack.JPG?v=2" id="sideImg">
+                 <img src="Images/logoBlack.JPG?v=3" id="sideImg">
             </div>
             <form id="signupForm">
                 <h1 id="curationHead">curation1</h1>
@@ -157,6 +153,6 @@
             </form>
         </div>
     </div>
-    <script src="Javascript/homepage.js?v=2"></script>
+    <script src="Javascript/homepage.js?v=3"></script>
 </body>
 </html>

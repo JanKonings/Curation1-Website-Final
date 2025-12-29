@@ -68,4 +68,9 @@ ul#homepageNav a:hover {
 }
 
 
+@media (max-width: 700px) {
 
+    svg#LogoWrap {
+        margin-top: 40px;
+    }
+}
