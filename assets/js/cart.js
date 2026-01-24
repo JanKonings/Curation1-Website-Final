@@ -32,7 +32,7 @@ document.addEventListener("DOMContentLoaded", function () {
         cartHTML += `
             <div class="cartItem" id="cartItem${index}">
                 <div class="wrapper">
-                    <img src="Images/cartPants.png" id="cartItemImg">
+                    <img src="/assets/images/cartPants.png" id="cartItemImg">
                     <div class="cartItemInfo">
                         <h1>YOKED MIDNIGHT DENIM</h1>
                         <h3 class="modeTag">(${item.mode === "preorder" ? "PREORDER" : "PREMADE"})</h3>

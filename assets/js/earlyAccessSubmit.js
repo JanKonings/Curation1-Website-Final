@@ -38,7 +38,7 @@ $(document).ready(function () {
 
         $.ajax({
             type: "POST",
-            url: "signupToBrevo.php",
+            url: "/api/brevo-signup.php",
             data: {
                 email: email,
                 phone: fullPhone, // Send the concatenated phone number

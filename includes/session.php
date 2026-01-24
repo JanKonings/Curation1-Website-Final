@@ -26,7 +26,7 @@
     if (isset($_SESSION['LAST_ACTIVITY']) && (time() - $_SESSION['LAST_ACTIVITY'] > $timeout_duration)) {
         session_unset();
         session_destroy();
-        header("Location: password.php");
+        header("Location: /pages/password.php");
         exit;
     }
 
@@ -35,7 +35,7 @@
 
     // Check if the user is logged in
     if (!isset($_SESSION['loggedin']) || $_SESSION['loggedin'] !== true) {
-        header("Location: password.php");
+        header("Location: /pages/password.php");
         exit;
     }
 ?>

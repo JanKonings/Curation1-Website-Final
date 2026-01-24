@@ -2,7 +2,7 @@
     session_start();
 
     if (isset($_SESSION['loggedin']) && $_SESSION['loggedin'] === true) {
-        header("Location: homepage.php");
+        header("Location: /pages/homepage.php");
         exit;
     }
 
@@ -26,7 +26,7 @@
                 $_SESSION['LAST_ACTIVITY'] = time();
 
                 // Redirect to the homepage
-                header("Location: homepage.php");
+                header("Location: /pages/homepage.php");
                 exit;
             } else {
                 // Set error message if the password is incorrect
@@ -43,11 +43,11 @@
 <head>
     <title>Shop Page</title>
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
-    <link rel="stylesheet" type="text/css" href="CSS/password.css?v=2">
-    <link rel="stylesheet" type="text/css" href="CSS/earlyAccess.css?v=6">
+    <link rel="stylesheet" type="text/css" href="/assets/css/password.css?v=2">
+    <link rel="stylesheet" type="text/css" href="/assets/css/earlyAccess.css?v=6">
     <script src="https://code.jquery.com/jquery-3.7.1.js" integrity="sha256-eKhayi8LEQwp4NKxN+CfCh+3qOVUtJn3QNZ0TciWLP4=" crossorigin="anonymous"></script>
-    <script src="Javascript/earlyAccessSubmit.js?v=4" defer></script>
-    <script src="Javascript/password.js?v=4" defer></script>
+    <script src="/assets/js/earlyAccessSubmit.js?v=4" defer></script>
+    <script src="/assets/js/password.js?v=4" defer></script>
 
 
 
@@ -57,10 +57,10 @@
 </head>
 <body>
     <div class="screen">
-        <!-- <img src="Images/HomePageLogo.JPG" id="Logo"/> -->
-         <img src="Images/logoBlack.png?v=3" id="Logo"/>
-        <form action="password.php" method="POST">
-            <img src="Images/cursorBlack.png?v=3" id="cursor"/>
+        <!-- <img src="/assets/images/HomePageLogo.JPG" id="Logo"/> -->
+         <img src="/assets/images/logoBlack.png?v=3" id="Logo"/>
+        <form action="/pages/password.php" method="POST">
+            <img src="/assets/images/cursorBlack.png?v=3" id="cursor"/>
             <input type="password" id="password" name="password" required>
 
             <!-- <button type="submit">Login</button> -->
@@ -78,8 +78,8 @@
         <div class="earlyAccessForm">
             <h2 id="close">X</h2>
             <div id="sideImgBox">
-                <!-- <img src="Images/transparentLogo.png" id="sideImg"> -->
-                 <img src="Images/logoBlack.JPG?v=3" id="sideImg">
+                <!-- <img src="/assets/images/transparentLogo.png" id="sideImg"> -->
+                 <img src="/assets/images/logoBlack.JPG?v=3" id="sideImg">
             </div>
             <form id="signupForm">
                 <h1 id="curationHead">curation1</h1>
@@ -146,8 +146,8 @@
                         <input type="checkbox" id="termsOptIn" >
                     </div>
                     <div class="textCol">
-                        I agree to the <a href="terms.html">Terms and Conditions</a> and 
-                        <a href="privacy.html">Privacy Policy</a>. Your mobile information 
+                        I agree to the <a href="/static/terms.html">Terms and Conditions</a> and
+                        <a href="/static/privacy.html">Privacy Policy</a>. Your mobile information 
                         will not be sold or shared with third parties for promotional purposes.
                     </div>
                 </div>

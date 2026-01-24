@@ -7,9 +7,9 @@
     <link rel="icon" type="image/png" sizes="32x32" href="favicon-32x32.png?v=3">
     <link rel="icon" type="image/png" sizes="16x16" href="favicon-16x16.png?v=3">
     <meta name="viewport" content="width=device-width, initial-scale=.75, maximum-scale=1, user-scalable=no">
-    <link rel="stylesheet" type="text/css" href="CSS/preShop.css?v=6">
-    <link rel="stylesheet" type="text/css" href="CSS/earlyAccess.css?v=8">
-    <script src="Javascript/earlyAccessSubmit.js?v=4" defer></script>
+    <link rel="stylesheet" type="text/css" href="/assets/css/preShop.css?v=6">
+    <link rel="stylesheet" type="text/css" href="/assets/css/earlyAccess.css?v=8">
+    <script src="/assets/js/earlyAccessSubmit.js?v=4" defer></script>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=La+Belle+Aurore&display=swap" rel="stylesheet">
@@ -42,11 +42,11 @@
     </div> -->
 
     <audio id="crackSizzle">
-        <source src="Images/eggDrop/sizzleFade.mp3" type="audio/mpeg">
-    </audio>    
+        <source src="/assets/images/eggDrop/sizzleFade.mp3" type="audio/mpeg">
+    </audio>
 
     <audio id="crack">
-        <source src="Images/eggDrop/crack.mp3" type="audio/mpeg">
+        <source src="/assets/images/eggDrop/crack.mp3" type="audio/mpeg">
     </audio> 
 
     <div id="countdown">
@@ -54,7 +54,7 @@
             <div id="eggClick">
                 <h1 class="instructions">shop now</h1>
             </div>
-            <img id="animation" src="Images/eggDropMidnight/IMG_0251-16.PNG?v=3" />
+            <img id="animation" src="/assets/images/eggDropMidnight/IMG_0251-16.PNG?v=3" />
             <div id="timer">
                 <span id="countdownTimer" class="time"></span>
             </div>
@@ -68,7 +68,7 @@
             <h2 id="close">X</h2>
             <div id="sideImgBox">
                 <!-- <img src="Images/transparentLogo.png" id="sideImg"> -->
-                 <img src="Images/logoBlack.JPG?v=3" id="sideImg">
+                 <img src="/assets/images/logoBlack.JPG?v=3" id="sideImg">
             </div>
             <form id="signupForm">
                 <h1 id="curationHead">curation1</h1>
@@ -135,8 +135,8 @@
                         <input type="checkbox" id="termsOptIn" >
                     </div>
                     <div class="textCol">
-                        I agree to the <a href="terms.html">Terms and Conditions</a> and 
-                        <a href="privacy.html">Privacy Policy</a>. Your mobile information 
+                        I agree to the <a href="/static/terms.html">Terms and Conditions</a> and
+                        <a href="/static/privacy.html">Privacy Policy</a>. Your mobile information 
                         will not be sold or shared with third parties for promotional purposes.
                     </div>
                 </div>
@@ -150,6 +150,6 @@
         <h2 id="earlyAccessToggle">E-LIST</h2>
     </div>
 
-    <script src="Javascript/index.js?v=3"></script>
+    <script src="/assets/js/index.js?v=3"></script>
 </body>
 </html>

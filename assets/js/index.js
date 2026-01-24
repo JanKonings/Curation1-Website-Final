@@ -34,7 +34,7 @@ window.onload = function () {
     const totalFrames = 33;
     
     for (let i = 16; i <= totalFrames; i++) {
-        imagePaths.push(`Images/eggDropMidnight/IMG_0251-${i}.PNG`);
+        imagePaths.push(`/assets/images/eggDropMidnight/IMG_0251-${i}.PNG`);
     }
 
     // prload the frames
@@ -157,7 +157,7 @@ window.onload = function () {
 
                                 // Delay navigation slightly to let audio/rendering settle
                                 setTimeout(() => {
-                                    window.location.href = "Shop.php";
+                                    window.location.href = "/pages/shop.php";
                                 }, 500);
                             }
                         }, 200);

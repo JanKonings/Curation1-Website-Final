@@ -6,12 +6,12 @@ $(document).ready(function () {
     $('.letterBox').hover(
         function () {
             if (!animationStarted) {
-                $letterImg.attr('src', 'Images/Untitled_Artwork-2.png');
+                $letterImg.attr('src', '/assets/images/Untitled_Artwork-2.png');
             }
         },
         function () {
             if (!animationStarted) {
-                $letterImg.attr('src', 'Images/Untitled_Artwork-1.png');
+                $letterImg.attr('src', '/assets/images/Untitled_Artwork-1.png');
             }
         }
     );
@@ -25,7 +25,7 @@ $(document).ready(function () {
         const interval = 200;
 
         const animate = () => {
-            $letterImg.attr('src', `Images/Untitled_Artwork-${currentFrame}.png`);
+            $letterImg.attr('src', `/assets/images/Untitled_Artwork-${currentFrame}.png`);
 
             if (currentFrame === totalFrames) {
                 setTimeout(() => {
@@ -46,13 +46,13 @@ $(document).ready(function () {
 
     $('.modalClose').on('click', function () {
         $('.aboutUsModal').css('display', 'none');
-        $letterImg.attr('src', `Images/Untitled_Artwork-1.png`);
+        $letterImg.attr('src', `/assets/images/Untitled_Artwork-1.png`);
     });
 
     $('.aboutUsModal').on('click', function (e) {
         if ($(e.target).is('.aboutUsModal')) {
             $(this).css('display', 'none');
-            $letterImg.attr('src', `Images/Untitled_Artwork-1.png`);
+            $letterImg.attr('src', `/assets/images/Untitled_Artwork-1.png`);
         }
     });
 });

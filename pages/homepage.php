@@ -1,4 +1,4 @@
-<?php include 'validSessionCheck.php'; ?>
+<?php include __DIR__ . '/../includes/session.php'; ?>
 
 <!DOCTYPE html>
 <html lang="en">
@@ -10,9 +10,9 @@
     <link rel="apple-touch-icon" sizes="180x180" href="apple-touch-icon.png?v=3">
     <link rel="icon" type="image/png" sizes="32x32" href="favicon-32x32.png?v=3">
     <link rel="icon" type="image/png" sizes="16x16" href="favicon-16x16.png?v=3">
-    <link rel="stylesheet" type="text/css" href="CSS/homepageCSS.css?v=7">
-    <link rel="stylesheet" type="text/css" href="CSS/header.css?v=7">
-    <link rel="stylesheet" type="text/css" href="CSS/earlyAccess.css?v=8">
+    <link rel="stylesheet" type="text/css" href="/assets/css/homepageCSS.css?v=7">
+    <link rel="stylesheet" type="text/css" href="/assets/css/header.css?v=7">
+    <link rel="stylesheet" type="text/css" href="/assets/css/earlyAccess.css?v=8">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=La+Belle+Aurore&display=swap" rel="stylesheet">
@@ -20,23 +20,23 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Caveat:wght@400..700&family=Cormorant:ital,wght@0,300..700;1,300..700&family=Geist:wght@100..900&family=Hind:wght@300;400;500;600;700&family=La+Belle+Aurore&family=Nunito+Sans:ital,opsz,wght@0,6..12,200..1000;1,6..12,200..1000&family=Outfit:wght@100..900&family=Yantramanav:wght@100;300;400;500;700;900&display=swap" rel="stylesheet">
     <script src="https://code.jquery.com/jquery-3.7.1.js" integrity="sha256-eKhayi8LEQwp4NKxN+CfCh+3qOVUtJn3QNZ0TciWLP4=" crossorigin="anonymous"></script>
-    <script src="Javascript/cartUtils.js?v=6"></script>
-    <script src="Javascript/earlyAccessSubmit.js?v=4"></script>
+    <script src="/assets/js/cartUtils.js?v=6"></script>
+    <script src="/assets/js/earlyAccessSubmit.js?v=4"></script>
   
 </head>
 <body>
     <div class="header">
-        <!-- <a href="homepage.php"><img src="Images/logo.png" id="headerLogo"></a> -->
-        <a href="homepage.php"><img src="Images/logoBlack.png?v=3" id="headerLogo"></a>
+        <!-- <a href="/pages/homepage.php"><img src="/assets/images/logo.png" id="headerLogo"></a> -->
+        <a href="/pages/homepage.php"><img src="/assets/images/logoBlack.png?v=3" id="headerLogo"></a>
 
 
         <ul id="nav">
-            <li><a href="Shop.php">shop</a></li>
-            <li><a href="AboutUs.php">about us</a></li>
+            <li><a href="/pages/shop.php">shop</a></li>
+            <li><a href="/pages/about.php">about us</a></li>
         </ul>
 
-        <a id="cart" href="cart.php">
-            <img id="cartIMG" src="Images/cart.png?v=4" />
+        <a id="cart" href="/pages/cart.php">
+            <img id="cartIMG" src="/assets/images/cart.png?v=4" />
             <div id="headerCartCount">0</div>
         </a>
     </div>
@@ -48,8 +48,8 @@
                 <path id="lowerCurve" d="M 0,210 A 163,130 0 0,0 300,195"/>
             </defs>
         
-            <!-- <image id="Logo" href="Images/logo.png?v=1" /> -->
-            <image id="Logo" href="Images/logoBlack.png?v=3" />
+            <!-- <image id="Logo" href="/assets/images/logo.png?v=1" /> -->
+            <image id="Logo" href="/assets/images/logoBlack.png?v=3" />
 
             <text>
                 <textPath class="logoText" href="#upperCurve" startOffset="50%">
@@ -66,10 +66,10 @@
     </div>
 
     <ul id="homepageNav">
-        <li><a href="Shop.php">Shop</a></li>
-        <li><a href="AboutUs.php">About Us</a></li>
+        <li><a href="/pages/shop.php">Shop</a></li>
+        <li><a href="/pages/about.php">About Us</a></li>
         <h2 id="earlyAccessToggle">E-LIST</h2>
-        <!-- <button onclick="window.location.href='logout.php'">Logout</button> -->
+        <!-- <button onclick="window.location.href='/pages/logout.php'">Logout</button> -->
     </ul>
 
     <!-- Sign Up Form -->
@@ -77,8 +77,8 @@
         <div class="earlyAccessForm">
             <h2 id="close">X</h2>
             <div id="sideImgBox">
-                <!-- <img src="Images/transparentLogo.png" id="sideImg"> -->
-                 <img src="Images/logoBlack.JPG?v=3" id="sideImg">
+                <!-- <img src="/assets/images/transparentLogo.png" id="sideImg"> -->
+                 <img src="/assets/images/logoBlack.JPG?v=3" id="sideImg">
             </div>
             <form id="signupForm">
                 <h1 id="curationHead">curation1</h1>
@@ -142,8 +142,8 @@
                         <input type="checkbox" id="termsOptIn" >
                     </div>
                     <div class="textCol">
-                        I agree to the <a href="terms.html">Terms and Conditions</a> and 
-                        <a href="privacy.html">Privacy Policy</a>. Your mobile information 
+                        I agree to the <a href="/static/terms.html">Terms and Conditions</a> and
+                        <a href="/static/privacy.html">Privacy Policy</a>. Your mobile information 
                         will not be sold or shared with third parties for promotional purposes.
                     </div>
                 </div>
@@ -153,6 +153,6 @@
             </form>
         </div>
     </div>
-    <script src="Javascript/homepage.js?v=3"></script>
+    <script src="/assets/js/homepage.js?v=3"></script>
 </body>
 </html>

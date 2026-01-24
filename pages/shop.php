@@ -1,52 +1,52 @@
-<?php include 'validSessionCheck.php'; ?>
+<?php include __DIR__ . '/../includes/session.php'; ?>
 
 <!DOCTYPE html>
 <html>
 <head>
     <title>Shop Page</title>
     <link rel="icon" href="/favicon.ico" type="image/x-icon">
-    <link rel="apple-touch-icon" sizes="180x180" href="apple-touch-icon.png?v=3">
-    <link rel="icon" type="image/png" sizes="32x32" href="favicon-32x32.png?v=3">
-    <link rel="icon" type="image/png" sizes="16x16" href="favicon-16x16.png?v=3">
+    <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png?v=3">
+    <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png?v=3">
+    <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png?v=3">
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
-    <link rel="stylesheet" type="text/css" href="CSS/shop.css?v=7">
-    <link rel="stylesheet" type="text/css" href="CSS/header.css?v=7">
+    <link rel="stylesheet" type="text/css" href="/assets/css/shop.css?v=7">
+    <link rel="stylesheet" type="text/css" href="/assets/css/header.css?v=7">
     <script src="https://code.jquery.com/jquery-3.7.1.js" integrity="sha256-eKhayi8LEQwp4NKxN+CfCh+3qOVUtJn3QNZ0TciWLP4=" crossorigin="anonymous"></script>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Caveat:wght@400..700&family=La+Belle+Aurore&display=swap" rel="stylesheet">
-    <script src="Javascript/cartUtils.js?v=6"></script>
+    <script src="/assets/js/cartUtils.js?v=6"></script>
 </head>
 <body>
     <!-- <div class="midnight"> -->
-        <img src="Images/MIDNIGHT.svg" alt="" class="midnightIMG">
+        <img src="/assets/images/MIDNIGHT.svg" alt="" class="midnightIMG">
     <!-- </div> -->
     <div class="header">
-        <a href="homepage.php"><img src="Images/logoBlack.png?v=3" id="headerLogo"></a>
+        <a href="/pages/homepage.php"><img src="/assets/images/logoBlack.png?v=3" id="headerLogo"></a>
 
         <ul id="nav">
-            <li><a href="Shop.php">shop</a></li>
-            <li><a href="AboutUs.php">about us</a></li>
+            <li><a href="/pages/shop.php">shop</a></li>
+            <li><a href="/pages/about.php">about us</a></li>
         </ul>
 
-        <a id="cart" href="cart.php">
-            <img id="cartIMG" src="Images/cart.png?v=4" />
+        <a id="cart" href="/pages/cart.php">
+            <img id="cartIMG" src="/assets/images/cart.png?v=4" />
             <div id="headerCartCount">0</div>
         </a>
     </div>
 
     <audio id="straw" preload="auto">
-            <source src="straw.mp3" type="audio/mp3">
+            <source src="/assets/audio/straw.mp3" type="audio/mp3">
     </audio>
 
     <div id="shopContainer">
         <div class="imageContainer">
-            <img id="shopImg" src="Images/midnight1.png?v=2" alt="Product Image">
+            <img id="shopImg" src="/assets/images/midnight1.png?v=2" alt="Product Image">
             <button class="navButton prevButton">
-                <img src="Images/arrowLeft.svg" alt="Previous" />
+                <img src="/assets/images/arrowLeft.svg" alt="Previous" />
             </button>
             <button class="navButton nextButton">
-                <img src="Images/arrowRight.svg" alt="Next" />
+                <img src="/assets/images/arrowRight.svg" alt="Next" />
             </button>
             <div class="itemAdded">
                 <div class="diagonal-text">
@@ -96,6 +96,6 @@
 
         <!-- <img src="Images/logo.png" id="cornerImg"> -->
     </div>
-    <script src="Javascript/shop.js?v=6"></script>
+    <script src="/assets/js/shop.js?v=6"></script>
 </body>
 </html>
