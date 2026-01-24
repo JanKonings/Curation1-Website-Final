@@ -206,10 +206,10 @@ $(document).ready(function() {
     // ];
 
     const images = [
-        '/assets/images/midnight1.png',
-        '/assets/images/midnight2.png',
-        '/assets/images/midnight3.png',
-        '/assets/images/midnight4.png'
+        '/assets/images/midnight1.webp',
+        '/assets/images/midnight2.webp',
+        '/assets/images/midnight3.webp',
+        '/assets/images/midnight4.webp'
     ];
 
     const preloadedImages = [];

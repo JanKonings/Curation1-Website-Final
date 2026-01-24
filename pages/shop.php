@@ -41,7 +41,7 @@
 
     <div id="shopContainer">
         <div class="imageContainer">
-            <img id="shopImg" src="/assets/images/midnight1.png?v=2" alt="Product Image">
+            <img id="shopImg" src="/assets/images/midnight1.webp?v=2" alt="Product Image">
             <button class="navButton prevButton">
                 <img src="/assets/images/arrowLeft.svg" alt="Previous" />
             </button>
