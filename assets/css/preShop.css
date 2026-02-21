@@ -1,20 +1,18 @@
 #countdown {
     width: 100%;
-    /* margin-top: 50px; */
     display: flex;
     min-height: 100vh;
-    /* justify-content: center; */
     align-items: center;
     flex-direction: column;
     box-sizing: border-box;
-    background-color: #ffffff;
+    background-color: var(--color-bg-white);
     z-index: -1;
 }
 
 #countdownTimer {
     font-size: 22px;
-    color: #ffffff;
-    font-family: 'La Belle Aurore', cursive;
+    color: var(--color-bg-white);
+    font-family: var(--font-accent);
 }
 
 .eggDrop {
@@ -30,12 +28,12 @@
 
 #timer {
     position: absolute;
-    bottom: 195px; /* Adjust this value to move the timer up or down */
+    bottom: 195px;
     left: 50%;
-    transform: translateX(-50%); /* Center it horizontally */
-    background: rgba(255, 255, 255, 0); /* Optional: add a semi-transparent background for better visibility */
+    transform: translateX(-50%);
+    background: rgba(255, 255, 255, 0);
     margin-left: 16px;
-    border-radius: 5px;
+    border-radius: var(--radius-sm);
     background-color: #f7f7f700;
 }
 
@@ -43,12 +41,12 @@
     position: absolute;
     top: 150px;
     left: 50%;
-    transform: translateX(-50%); /* Center it horizontally */
-    background: rgba(255, 255, 255, 0); /* Optional: add a semi-transparent background for better visibility */
+    transform: translateX(-50%);
+    background: rgba(255, 255, 255, 0);
     background-color: #ff000000;
     width: 280px;
     height: 210px;
-    border-radius: 50%;
+    border-radius: var(--radius-full);
 }
 
 @keyframes shake {
@@ -61,17 +59,16 @@
 }
 
 .shake {
-    animation: shake 0.3s ease-in-out;
+    animation: shake var(--transition-normal);
 }
 
 .instructions {
     position: fixed;
     top: 60px;
-    font-family: 'caveat', sans-serif;
+    font-family: var(--font-primary);
     left: 50%;
     transform: translateX(-50%);
     text-align: center;
-    color: #000000;
+    color: var(--color-primary);
     cursor: pointer;
 }
-

@@ -9,6 +9,7 @@
     <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png?v=3">
     <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png?v=3">
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+    <link rel="stylesheet" type="text/css" href="/assets/css/tokens.css?v=1">
     <link rel="stylesheet" type="text/css" href="/assets/css/shop.css?v=7">
     <link rel="stylesheet" type="text/css" href="/assets/css/header.css?v=7">
     <script src="https://code.jquery.com/jquery-3.7.1.js" integrity="sha256-eKhayi8LEQwp4NKxN+CfCh+3qOVUtJn3QNZ0TciWLP4=" crossorigin="anonymous"></script>
@@ -21,19 +22,7 @@
     <!-- <div class="midnight"> -->
         <img src="/assets/images/MIDNIGHT.svg" alt="" class="midnightIMG">
     <!-- </div> -->
-    <div class="header">
-        <a href="/pages/homepage.php"><img src="/assets/images/logoBlack.png?v=3" id="headerLogo"></a>
-
-        <ul id="nav">
-            <li><a href="/pages/shop.php">shop</a></li>
-            <li><a href="/pages/about.php">about us</a></li>
-        </ul>
-
-        <a id="cart" href="/pages/cart.php">
-            <img id="cartIMG" src="/assets/images/cart.png?v=4" />
-            <div id="headerCartCount">0</div>
-        </a>
-    </div>
+    <?php include __DIR__ . '/../includes/header.php'; ?>
 
     <audio id="straw" preload="auto">
             <source src="/assets/audio/straw.mp3" type="audio/mp3">

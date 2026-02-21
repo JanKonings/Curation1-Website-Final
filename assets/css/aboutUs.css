@@ -1,12 +1,12 @@
 body {
     margin: 0;
     padding: 0;
-    background-color: #FFFBF6;
+    background-color: var(--color-bg);
 }
 
 .letterContainer {
     width: 100%;
-    height: 600px; 
+    height: 600px;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -21,36 +21,35 @@ body {
 }
 
 .letterBox {
-    bottom: 26.7%; 
+    bottom: 26.7%;
     width: 57.2%;
-    height: 36.7%; 
+    height: 36.7%;
     cursor: pointer;
     overflow: hidden;
     position: absolute;
 }
 
 .aboutUsModal {
-    display: none; 
+    display: none;
     justify-content: center;
     align-items: center;
-    position: fixed; 
-    z-index: 1; 
+    position: fixed;
+    z-index: 1;
     left: 0;
     top: 0;
-    width: 100%; 
-    height: 100%; 
-    overflow: auto; 
+    width: 100%;
+    height: 100%;
+    overflow: auto;
 }
 
 .aboutUsModalContent {
-    background-color: #fefefe;
+    background-color: var(--color-modal-warm);
     padding: 50px 30px 20px 30px;
-    border: 3px solid #000000;
+    border: 3px solid var(--color-primary);
     display: flex;
     flex-direction: column;
     align-items: center;
-    max-width: 400px; 
-    background-color: rgb(255, 249, 237);
+    max-width: 400px;
     position: relative;
 }
 
@@ -68,18 +67,18 @@ body {
         to bottom,
         transparent 0,
         transparent 39px,
-        #000000 39px,
-        #000000 41px
+        var(--color-primary) 39px,
+        var(--color-primary) 41px
     );
 }
 
 .letterLines p {
     z-index: 1;
     font-size: 28px;
-    font-family: caveat, cursive;
+    font-family: var(--font-primary);
     margin: 0;
     line-height: 41px;
-    color: #000000;
+    color: var(--color-primary);
     margin-bottom: 20px;
     box-sizing: border-box;
 }
@@ -88,7 +87,7 @@ body {
     position: absolute;
     top: 10px;
     right: 10px;
-    color: #000000;
+    color: var(--color-primary);
     float: right;
     font-size: 28px;
     font-weight: bold;
@@ -111,7 +110,7 @@ body {
   content: "";
   position: absolute;
   inset: 0;
-  border: 2px solid #000000;
+  border: 2px solid var(--color-primary);
   border-radius: 18px;
 }
 
@@ -120,14 +119,15 @@ body {
   left: 6px;
   width: 18px;
   height: 56px;
-  border-color: #000000;
+  border-color: var(--color-primary);
   border-left: none;
   border-bottom: none;
   border-right: none;
   transform: rotate(-10deg);
 }
 
-@media (max-width: 900px) {
+/* ---- Desktop: 880px ---- */
+@media (max-width: 880px) {
     .letterImg {
         margin-right: 19px;
     }
@@ -142,7 +142,7 @@ body {
     }
 }
 
-
+/* ---- Mobile: 480px ---- */
 @media (max-width: 480px) {
     .letterLines p {
         font-size: 14px;
@@ -168,9 +168,8 @@ body {
             to bottom,
             transparent 0,
             transparent 35px,
-            #000000 35px,
-            #000000 37px
+            var(--color-primary) 35px,
+            var(--color-primary) 37px
         );
     }
 }
-

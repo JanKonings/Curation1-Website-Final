@@ -1,7 +1,7 @@
 .earlyAccess {
     width: 100%;
     height: 100vh;
-    background-color: rgba(58, 52, 52, 0.468);
+    background-color: var(--color-overlay);
     position: fixed;
     top: 0;
     left: 0;
@@ -16,8 +16,7 @@
     display: flex;
     flex-direction: row;
     position: relative;
-    /* background-color: #fffaf6; */
-    background-color: #ffffff;
+    background-color: var(--color-bg-white);
     overflow: hidden;
 }
 
@@ -26,27 +25,23 @@
     margin: 0;
     padding: 0;
     box-shadow: none;
-    background-color: #ffffff;
+    background-color: var(--color-bg-white);
 }
 
 #sideImgBox,
 #signupForm {
     margin: 0;
     border: none;
-    /* background-color: #fffaf6 */
-    background-color: #ffffff;
+    background-color: var(--color-bg-white);
 }
 
 #signupForm {
     flex: 1;
-    background-color: rgb(255, 255, 255);
+    background-color: var(--color-bg-white);
     display: flex;
     flex-direction: column;
     align-items: center;
     position: relative;
-    /* background-color: #fffaf6; */
-    background-color: #ffffff;
-
 }
 
 #sideImgBox {
@@ -54,8 +49,7 @@
     display: flex;
     justify-content: center;
     align-items: center;
-    /* background-color: #fffaf6; */
-    background-color: #ffffff;
+    background-color: var(--color-bg-white);
     position: relative;
 }
 
@@ -66,13 +60,11 @@
     right: 0;
     width: 1px;
     height: 80%;
-    /* background-color: #980409;  */
-    background-color: black;
+    background-color: var(--color-primary);
 }
-   
 
 label[for="phone"] {
-    color: rgb(0, 0, 0);
+    color: var(--color-primary);
 }
 
 #sideImg {
@@ -80,47 +72,42 @@ label[for="phone"] {
     height: auto;
 }
 
-
 #earlyAccessButton {
     margin-top: 30px;
     width: 80%;
-    /* background-color: #c36d70; */
-    background-color: #686666;
+    background-color: var(--color-btn-secondary);
     border: none;
     padding: 12px;
-    color: #ffffff;
-    border-radius: 30px;
+    color: var(--color-bg-white);
+    border-radius: var(--radius-pill);
     margin-bottom: 40px;
-    font-family: 'Caveat', cursive;
+    font-family: var(--font-primary);
     font-size: 17px;
 }
 
 #earlyAccessButton:hover {
-    /* background-color: #980409; */
-    background-color: #000000;
+    background-color: var(--color-primary);
     cursor: pointer;
 }
+
 input[type="email"],
 input[type="tel"],
 select {
     -webkit-appearance: none;
     -moz-appearance: none;
     appearance: none;
-    border-radius: 0; /* Prevent mobile browser rounding */
+    border-radius: 0;
 }
 
 input[type="email"],
 input[type="tel"] {
     outline: none;
     border: none;
-    /* border-bottom: 1px solid #980409; */
-    border-bottom: 1px solid black;
+    border-bottom: 1px solid var(--color-primary);
     width: 80%;
     font-size: 16px;
-    font-family: 'La Belle Aurore', cursive;
-    /* font-family: 'Times New Roman', Times, serif; */
-    /* background-color: #fffaf6; */
-    background-color: #ffffff;
+    font-family: var(--font-accent);
+    background-color: var(--color-bg-white);
 }
 
 input[type="email"] {
@@ -129,23 +116,18 @@ input[type="email"] {
     box-sizing: border-box;
 }
 
-
-
-
-
 #curationHead {
     position: absolute;
     top: 15px;
     left: 50%;
     padding: 0px;
     margin: 0px;
-    transform: translateX(-50%); 
-    background: rgba(255, 255, 255, 0); /* Optional: add a semi-transparent background for better visibility */
+    transform: translateX(-50%);
+    background: rgba(255, 255, 255, 0);
     background-color: #ff000000;
     font-size: 35px;
-    /* color: #980409; */
-    color: black;
-    font-family: 'La Belle Aurore', cursive;
+    color: var(--color-primary);
+    font-family: var(--font-accent);
 }
 
 .checkMessage {
@@ -158,17 +140,16 @@ input[type="email"] {
 #checkMsg {
     font-size: 13px;
     margin-left: 20px;
-    color: #000000;
-    font-family: 'La Belle Aurore', cursive;
+    color: var(--color-primary);
+    font-family: var(--font-accent);
 }
 
 #userAgreement {
     margin: 0;
     font-size: 20px;
     width: 80%;
-    font-family: 'La Belle Aurore', cursive;
-    /* color: #980409; */
-    color: black;
+    font-family: var(--font-accent);
+    color: var(--color-primary);
     text-align: center;
     line-height: 1.5;
 }
@@ -181,8 +162,7 @@ input[type="email"] {
 }
 
 #earlyAccessToggle {
-    /* color: #980409; */
-    color: black;
+    color: var(--color-primary);
     font-size: 23px;
     cursor: pointer;
     font-weight: 100;
@@ -195,9 +175,8 @@ input[type="email"] {
 
 .getEarlyAccess h2 {
     font-size: 19px;
-    /* color: #980409; */
-    color: black;
-    font-family: 'Caveat', cursive;
+    color: var(--color-primary);
+    font-family: var(--font-primary);
 }
 
 .getEarlyAccess h2:hover {
@@ -210,12 +189,10 @@ input[type="email"] {
     top: 10px;
     right: 15px;
     margin: 0;
-    color: rgba(58, 52, 52, 0.468);
     font-size: 20px;
     z-index: 10;
-    font-family: 'Caveat', cursive;
-    /* color: #980409; */
-    color: black;
+    font-family: var(--font-primary);
+    color: var(--color-primary);
 }
 
 #close:hover {
@@ -235,15 +212,13 @@ input[type="email"] {
 #countryCode {
     width: 50px;
     border: none;
-    /* border-bottom: 1px solid #980409; */
-    border-bottom: 1px solid black;
+    border-bottom: 1px solid var(--color-primary);
     font-size: 13px;
-    color: #757575;
+    color: var(--color-text-placeholder);
     outline: none;
     height: 32.5px;
-    /* background-color: #fffaf6; */
-    background-color: #ffffff;
-    font-family: 'La Belle Aurore', cursive;
+    background-color: var(--color-bg-white);
+    font-family: var(--font-accent);
     font-size: 16px;
 }
 
@@ -254,43 +229,42 @@ input[type="tel"] {
 }
 
 input:-webkit-autofill {
-    -webkit-box-shadow: 0 0 0px 1000px #ffffff inset;
-    box-shadow: 0 0 0px 1000px #ffffff inset;
+    -webkit-box-shadow: 0 0 0px 1000px var(--color-bg-white) inset;
+    box-shadow: 0 0 0px 1000px var(--color-bg-white) inset;
     -webkit-text-fill-color: #000;
 }
 
 .consentBlock {
     display: flex;
-    align-items: flex-start;   /* ensures checkbox & first line align */
-    gap: 10px;
+    align-items: flex-start;
+    gap: var(--space-sm);
     margin-bottom: 14px;
-    max-width: 90%; /* optional */
+    max-width: 90%;
 }
 
 .checkboxCol input[type="checkbox"] {
     width: 15px;
     height: 15px;
-    margin-top: 2px; /* perfect vertical alignment */
+    margin-top: 2px;
     padding-left: 0px;
 }
 
 input[type="checkbox"]:checked {
-    accent-color: #000000; /* Ensures the checkmark matches the background color */
+    accent-color: var(--color-primary);
 }
 
 .textCol {
     font-size: 12px;
     line-height: 1.4;
-    /* font-family: 'La Belle Aurore', cursive; */
-    font-family: 'Caveat', cursive;
+    font-family: var(--font-primary);
 }
 
 .textCol a {
-    color: #000;
+    color: var(--color-primary);
     text-decoration: underline;
 }
 
-
+/* ---- Tablet: 700px ---- */
 @media (max-width: 700px) {
     .earlyAccessForm {
         flex-direction: column;
@@ -341,13 +315,7 @@ input[type="checkbox"]:checked {
     #userAgreement {
         font-size: 15px;
     }
-}
 
-@media (max-width: 700px) {
-    /* #checkMsg {
-        font-size: 12px;
-        margin-left: 10px;
-    } */
     .textCol {
         font-size: 9px;
     }
@@ -372,12 +340,11 @@ input[type="checkbox"]:checked {
         height: 12px;
     }
 
-
     #earlyAccessButton {
         margin-top: 20px;
         margin-bottom: 20px;
         font-size: 14px;
-        padding: 8px;
+        padding: var(--space-sm);
     }
 
     #countryCode {

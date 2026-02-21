@@ -19,7 +19,6 @@
         $attributes['SMS'] = $phone;
         $attributes['SMS_MARKETING'] = true;   // custom attribute in Brevo
     } else {
-        // Explicitly mark that they did NOT opt in (optional but nice to have)
         $attributes['SMS_MARKETING'] = false;
     }
     

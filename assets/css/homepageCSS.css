@@ -1,12 +1,12 @@
 body {
-    font-family: 'caveat', sans-serif;
+    font-family: var(--font-primary);
     margin: 0;
     padding: 0;
-    background-color: #FFFBF6;
+    background-color: var(--color-bg);
 }
 
 image#Logo {
-    width: 300px; 
+    width: 300px;
     height: 300px;
     x: 0;
     y: 0;
@@ -29,7 +29,7 @@ path#lowerCurve {
 svg#LogoWrap {
     width: 300px;
     height: 300px;
-    margin-top: 80px;
+    margin-top: var(--space-4xl);
 }
 
 .logoText {
@@ -38,8 +38,7 @@ svg#LogoWrap {
 
 text {
     font-size: 40px;
-    /* fill: #980409; */
-    fill: black;
+    fill: var(--color-primary);
 }
 
 ul#homepageNav {
@@ -52,14 +51,13 @@ ul#homepageNav {
 }
 
 ul#homepageNav li {
-    display: inline-block; 
+    display: inline-block;
     margin: 20px;
 }
 
 ul#homepageNav li a {
-    text-decoration: none; 
-    /* color: #980409;  */
-    color: black;
+    text-decoration: none;
+    color: var(--color-primary);
     font-size: 27px;
 }
 
@@ -67,9 +65,8 @@ ul#homepageNav a:hover {
     font-weight: bold;
 }
 
-
+/* ---- Tablet: 700px ---- */
 @media (max-width: 700px) {
-
     svg#LogoWrap {
         margin-top: 40px;
     }
